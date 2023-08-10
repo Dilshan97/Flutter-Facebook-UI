@@ -270,43 +270,53 @@ class _ProfileState extends State<Profile> {
                           const BioItem(
                             title1: "Co-Founder/CEO at",
                             title2: "TECH පිස්සෝ",
+                            type: "job",
                           ),
                           BioItem(
                             title1: "Works at",
                             title2: "Xydder Labs",
+                            type: "job",
                           ),
                           BioItem(
                             title1: "Works at",
                             title2: "UBC Digital Networks Sri Lanka",
+                            type: "job",
                           ),
                           BioItem(
                             title1: "Contributer at",
                             title2: "Crowdsource by Google",
+                            type: "job",
                           ),
                           BioItem(
                             title1: "Former member at",
                             title2: "SLIIT FOSS Community",
+                            type: "job",
                           ),
                           BioItem(
                             title1: "Former Senior Member at",
                             title2:
                                 "Mahinda Rajapaksha College - Robotics & Innovators Club",
+                                type: "job",
                           ),
                           BioItem(
                             title1: "Studied at",
                             title2: "SLIIT",
+                            type: "edu",
                           ),
                           BioItem(
                             title1: "Studied at",
                             title2: "Mahinda Rajapaksha College , Homagama.",
+                            type: "edu",
                           ),
                           BioItem(
                             title1: "Lives in",
                             title2: "Homagama",
+                            type: "home",
                           ),
                           BioItem(
                             title1: "From",
                             title2: "Homagama",
+                            type: "location",
                           ),
                           Row(
                             children: [

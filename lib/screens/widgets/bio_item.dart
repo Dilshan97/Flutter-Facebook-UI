@@ -4,11 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 class BioItem extends StatefulWidget {
   final String title1;
   final String title2;
+  final String type;
 
   const BioItem({
     super.key,
     required this.title1,
     required this.title2,
+    required this.type,
   });
 
   @override
@@ -20,13 +22,13 @@ class _BioItemState extends State<BioItem> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        bottom: 10,
+        bottom: 15,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Image.asset(
-            "assets/icons/bag.png",
+            'assets/icons/${widget.type}.png',
             color: const Color(0xff8A8D90),
             width: 20,
           ),
@@ -42,6 +44,7 @@ class _BioItemState extends State<BioItem> {
                 text: "${widget.title1} ",
                 style: GoogleFonts.inter(
                   color: const Color(0xffDBDCE0),
+                  fontSize: 15,
                 ),
                 children: [
                   TextSpan(
@@ -49,6 +52,7 @@ class _BioItemState extends State<BioItem> {
                     style: GoogleFonts.inter(
                       color: const Color(0xffE4E6EA),
                       fontWeight: FontWeight.w600,
+                      fontSize: 15,
                     ),
                   ),
                 ],
