@@ -1,6 +1,7 @@
 import 'package:facebook_app_ui/screens/widgets/bio_item.dart';
 import 'package:facebook_app_ui/screens/widgets/feature_item.dart';
 import 'package:facebook_app_ui/screens/widgets/friends.dart';
+import 'package:facebook_app_ui/screens/widgets/social_media.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -272,51 +273,75 @@ class _ProfileState extends State<Profile> {
                             title2: "TECH පිස්සෝ",
                             type: "job",
                           ),
-                          BioItem(
+                          const BioItem(
                             title1: "Works at",
                             title2: "Xydder Labs",
                             type: "job",
                           ),
-                          BioItem(
+                          const BioItem(
                             title1: "Works at",
                             title2: "UBC Digital Networks Sri Lanka",
                             type: "job",
                           ),
-                          BioItem(
+                          const BioItem(
                             title1: "Contributer at",
                             title2: "Crowdsource by Google",
                             type: "job",
                           ),
-                          BioItem(
+                          const BioItem(
                             title1: "Former member at",
                             title2: "SLIIT FOSS Community",
                             type: "job",
                           ),
-                          BioItem(
+                          const BioItem(
                             title1: "Former Senior Member at",
                             title2:
                                 "Mahinda Rajapaksha College - Robotics & Innovators Club",
-                                type: "job",
+                            type: "job",
                           ),
-                          BioItem(
+                          const BioItem(
                             title1: "Studied at",
                             title2: "SLIIT",
                             type: "edu",
                           ),
-                          BioItem(
+                          const BioItem(
                             title1: "Studied at",
                             title2: "Mahinda Rajapaksha College , Homagama.",
                             type: "edu",
                           ),
-                          BioItem(
+                          const BioItem(
                             title1: "Lives in",
                             title2: "Homagama",
                             type: "home",
                           ),
-                          BioItem(
+                          const BioItem(
                             title1: "From",
                             title2: "Homagama",
                             type: "location",
+                          ),
+                          const SocialMedia(
+                            title: "Single",
+                            type: "status",
+                          ),
+                          const SocialMedia(
+                            title: "dilshan_ramesh",
+                            type: "instagram",
+                          ),
+                          const SocialMedia(
+                            title: "dilshan97",
+                            type: "github",
+                          ),
+                         const SocialMedia(
+                            title: "dilshanramesh81",
+                            type: "twitter",
+                          ),
+                          const SocialMedia(
+                            title: "dilshan-ramesh",
+                            type: "linkedin",
+                          ),
+                          const SocialMedia(
+                            title: "dilshan97.github.io",
+                            type: "web",
                           ),
                           Row(
                             children: [
@@ -349,17 +374,20 @@ class _ProfileState extends State<Profile> {
                                 ),
                                 FeatureItem(
                                   title: "🎓 Convocation",
-                                  image: "https://scontent.fcmb1-2.fna.fbcdn.net/v/t51.36329-10/319898978_516624730433004_4528875246806102442_n.jpg?stp=dst-jpg_p600x600&_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=ad6a45&_nc_eui2=AeHqHLsJNd_Y2bGbwZd6P95GSjedLlpUHzhKN50uWlQfOK8d8nhceVbnxw5kM1Bf1zStOuOX8n6r8xpDVfrGR4n4&_nc_ohc=Pa7dYSNEEQEAX9K5b2r&_nc_ht=scontent.fcmb1-2.fna&oh=00_AfCDkgQ4bA3SQ2pGgFlwe-BnQsTNPZzq3377Jo4DVS-J-A&oe=64DAE8D8",
+                                  image:
+                                      "https://scontent.fcmb1-2.fna.fbcdn.net/v/t51.36329-10/319898978_516624730433004_4528875246806102442_n.jpg?stp=dst-jpg_p600x600&_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=ad6a45&_nc_eui2=AeHqHLsJNd_Y2bGbwZd6P95GSjedLlpUHzhKN50uWlQfOK8d8nhceVbnxw5kM1Bf1zStOuOX8n6r8xpDVfrGR4n4&_nc_ohc=Pa7dYSNEEQEAX9K5b2r&_nc_ht=scontent.fcmb1-2.fna&oh=00_AfCDkgQ4bA3SQ2pGgFlwe-BnQsTNPZzq3377Jo4DVS-J-A&oe=64DAE8D8",
                                   add: false,
                                 ),
                                 FeatureItem(
                                   title: "Featured",
-                                  image: "https://scontent.fcmb1-2.fna.fbcdn.net/v/t51.36329-10/319898978_516624730433004_4528875246806102442_n.jpg?stp=dst-jpg_p600x600&_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=ad6a45&_nc_eui2=AeHqHLsJNd_Y2bGbwZd6P95GSjedLlpUHzhKN50uWlQfOK8d8nhceVbnxw5kM1Bf1zStOuOX8n6r8xpDVfrGR4n4&_nc_ohc=Pa7dYSNEEQEAX9K5b2r&_nc_ht=scontent.fcmb1-2.fna&oh=00_AfCDkgQ4bA3SQ2pGgFlwe-BnQsTNPZzq3377Jo4DVS-J-A&oe=64DAE8D8",
+                                  image:
+                                      "https://scontent.fcmb1-2.fna.fbcdn.net/v/t51.36329-10/319898978_516624730433004_4528875246806102442_n.jpg?stp=dst-jpg_p600x600&_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=ad6a45&_nc_eui2=AeHqHLsJNd_Y2bGbwZd6P95GSjedLlpUHzhKN50uWlQfOK8d8nhceVbnxw5kM1Bf1zStOuOX8n6r8xpDVfrGR4n4&_nc_ohc=Pa7dYSNEEQEAX9K5b2r&_nc_ht=scontent.fcmb1-2.fna&oh=00_AfCDkgQ4bA3SQ2pGgFlwe-BnQsTNPZzq3377Jo4DVS-J-A&oe=64DAE8D8",
                                   add: false,
                                 ),
                                 FeatureItem(
                                   title: "Dev Life",
-                                  image: "https://scontent.fcmb1-2.fna.fbcdn.net/v/t51.36329-10/319898978_516624730433004_4528875246806102442_n.jpg?stp=dst-jpg_p600x600&_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=ad6a45&_nc_eui2=AeHqHLsJNd_Y2bGbwZd6P95GSjedLlpUHzhKN50uWlQfOK8d8nhceVbnxw5kM1Bf1zStOuOX8n6r8xpDVfrGR4n4&_nc_ohc=Pa7dYSNEEQEAX9K5b2r&_nc_ht=scontent.fcmb1-2.fna&oh=00_AfCDkgQ4bA3SQ2pGgFlwe-BnQsTNPZzq3377Jo4DVS-J-A&oe=64DAE8D8",
+                                  image:
+                                      "https://scontent.fcmb1-2.fna.fbcdn.net/v/t51.36329-10/319898978_516624730433004_4528875246806102442_n.jpg?stp=dst-jpg_p600x600&_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=ad6a45&_nc_eui2=AeHqHLsJNd_Y2bGbwZd6P95GSjedLlpUHzhKN50uWlQfOK8d8nhceVbnxw5kM1Bf1zStOuOX8n6r8xpDVfrGR4n4&_nc_ohc=Pa7dYSNEEQEAX9K5b2r&_nc_ht=scontent.fcmb1-2.fna&oh=00_AfCDkgQ4bA3SQ2pGgFlwe-BnQsTNPZzq3377Jo4DVS-J-A&oe=64DAE8D8",
                                   add: false,
                                 ),
                               ],
