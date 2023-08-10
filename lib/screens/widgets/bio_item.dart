@@ -33,22 +33,26 @@ class _BioItemState extends State<BioItem> {
           const SizedBox(
             width: 10,
           ),
-          RichText(
-            overflow: TextOverflow.ellipsis,
-            text: TextSpan(
-              text: "${widget.title1} ",
-              style: GoogleFonts.inter(
-                color: const Color(0xffDBDCE0)
-              ),
-              children: [
-                TextSpan(
-                  text: widget.title2,
-                  style: GoogleFonts.inter(
-                    color: const Color(0xffE4E6EA),
-                    fontWeight: FontWeight.w600,
-                  )
+          Expanded(
+            child: RichText(
+              softWrap: false,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              text: TextSpan(
+                text: "${widget.title1} ",
+                style: GoogleFonts.inter(
+                  color: const Color(0xffDBDCE0),
                 ),
-              ],
+                children: [
+                  TextSpan(
+                    text: widget.title2,
+                    style: GoogleFonts.inter(
+                      color: const Color(0xffE4E6EA),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
             ),
           )
         ],

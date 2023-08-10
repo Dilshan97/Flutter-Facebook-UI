@@ -81,273 +81,300 @@ class _ProfileState extends State<Profile> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: Stack(
           children: [
-            SizedBox(
-              width: size.width,
-              height: 220,
-              child: Image.asset(
-                "assets/images/cover.jpeg",
-                fit: BoxFit.cover,
+            Stack(
+              children: [
+                SizedBox(
+                  width: size.width,
+                  height: 200,
+                  child: Image.asset(
+                    "assets/images/cover.jpeg",
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Positioned(
+                  top: 150,
+                  left: 340,
+                  child: Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: const Color(0xff3A3B3C),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Icon(
+                      Icons.camera_alt,
+                      color: Colors.white,
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Positioned(
+              top: 90,
+              left: 10,
+              child: Stack(
+                children: [
+                  CircleAvatar(
+                    radius: 75,
+                    backgroundColor: const Color(0xff242525),
+                    child: ClipOval(
+                      child: Image.asset(
+                        "assets/images/avatar.jpeg",
+                        width: 450,
+                        height: 450,
+                        fit: BoxFit.fitWidth,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 103,
+                    left: 120,
+                    child: Container(
+                      width: 30,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: const Color(0xff3A3B3C),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Icon(
+                        Icons.camera_alt,
+                        color: Colors.white,
+                        size: 16,
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
-            // Stack(
-            //   children: [
-            //     Positioned(
-            //       top: -10,
-            //       child: Row(
-            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //         crossAxisAlignment: CrossAxisAlignment.center,
-            //         children: [
-            //           CircleAvatar(
-            //             radius: 50,
-            //             backgroundColor: Color(0xff242525),
-            //             child: ClipOval(
-            //               child: Image.asset(
-            //                 "assets/images/avatar.jpeg",
-            //                 width: 400,
-            //                 height: 400,
-            //                 fit: BoxFit.cover,
-            //               ),
-            //             ),
-            //           ),
-            //           Container(
-            //             width: 40,
-            //             height: 40,
-            //             decoration: BoxDecoration(
-            //               color: Color(0xff3A3B3C),
-            //               borderRadius: BorderRadius.circular(20),
-            //             ),
-            //             child: const Icon(
-            //               Icons.camera_alt,
-            //               color: Colors.white,
-            //             ),
-            //           )
-            //         ],
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  RichText(
-                    text: TextSpan(
-                      text: "Dilshan Ramesh",
-                      style: GoogleFonts.inter(
-                        color: Colors.white,
-                        fontSize: 23,
-                      ),
-                      children: [
-                        TextSpan(
-                          text: " (ඩිලා)",
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 245,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      RichText(
+                        text: TextSpan(
+                          text: "Dilshan Ramesh",
                           style: GoogleFonts.inter(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 23,
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 3,
-                  ),
-                  Text(
-                    "Software Engineer | Innovator | Tech Enthusiast \n</> 🇱🇰🇦🇪🇳🇿🖥",
-                    style: GoogleFonts.inter(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w300,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 145,
-                        height: 45,
-                        decoration: BoxDecoration(
-                          color: const Color(0xff2C64F6),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Icon(
-                              Icons.add,
-                              color: Colors.white,
-                            ),
-                            Text(
-                              "Add to story",
+                            TextSpan(
+                              text: " (ඩිලා)",
                               style: GoogleFonts.inter(
                                 color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
                       const SizedBox(
-                        width: 10,
+                        height: 3,
                       ),
-                      Container(
-                        width: 145,
-                        height: 45,
-                        decoration: BoxDecoration(
-                          color: const Color(0xff3A3B3C),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(
-                              Icons.edit,
-                              color: Colors.white,
-                            ),
-                            Text(
-                              "Edit profile",
-                              style: GoogleFonts.inter(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        width: 50,
-                        height: 45,
-                        decoration: BoxDecoration(
-                            color: Color(0xff3A3B3C),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: const Icon(
-                          Icons.more_horiz,
+                      Text(
+                        "Software Engineer | Innovator | Tech Enthusiast \n</> 🇱🇰🇦🇪🇳🇿🖥",
+                        style: GoogleFonts.inter(
                           color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w300,
                         ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Column(
-                    children: [
-                      BioItem(
-                        title1: "Co-Founder/CEO at",
-                        title2: "TECH පිස්සෝ",
                       ),
-                      BioItem(
-                        title1: "Works at",
-                        title2: "Xydder Labs",
-                      ),
-                      BioItem(
-                        title1: "Works at",
-                        title2: "UBC Digital Networks Sri Lanka",
-                      ),
-                      BioItem(
-                        title1: "Contributer at",
-                        title2: "Crowdsource by Google",
-                      ),
-                      BioItem(
-                        title1: "Former member at",
-                        title2: "SLIIT FOSS Community",
-                      ),
-                      BioItem(
-                        title1: "Former Senior Member at",
-                        title2:
-                            "Mahinda Rajapaksha College - Robotics & Innovators Club",
-                      ),
-                      BioItem(
-                        title1: "Studied at",
-                        title2: "SLIIT",
-                      ),
-                      BioItem(
-                        title1: "Studied at",
-                        title2: "Mahinda Rajapaksha College , Homagama.",
-                      ),
-                      BioItem(
-                        title1: "Lives in",
-                        title2: "Homagama",
-                      ),
-                      BioItem(
-                        title1: "From",
-                        title2: "Homagama",
+                      const SizedBox(
+                        height: 10,
                       ),
                       Row(
                         children: [
-                          Icon(
-                            Icons.more_horiz,
-                            color: Color(0xffE4E6EA),
+                          Container(
+                            width: 145,
+                            height: 45,
+                            decoration: BoxDecoration(
+                              color: const Color(0xff2C64F6),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                ),
+                                Text(
+                                  "Add to story",
+                                  style: GoogleFonts.inter(
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
-                          SizedBox(
-                            width: 5,
+                          const SizedBox(
+                            width: 10,
                           ),
-                          Text(
-                            "See Your About Info",
-                            style: GoogleFonts.inter(
-                              color: Color(0xffE4E6EA),
+                          Container(
+                            width: 145,
+                            height: 45,
+                            decoration: BoxDecoration(
+                              color: const Color(0xff3A3B3C),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Icon(
+                                  Icons.edit,
+                                  color: Colors.white,
+                                ),
+                                Text(
+                                  "Edit profile",
+                                  style: GoogleFonts.inter(
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                            width: 50,
+                            height: 45,
+                            decoration: BoxDecoration(
+                                color: Color(0xff3A3B3C),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: const Icon(
+                              Icons.more_horiz,
+                              color: Colors.white,
                             ),
                           )
                         ],
                       ),
-                      const SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: [
-                            FeatureItem(
-                              title: "New",
-                            ),
-                            FeatureItem(
-                              title: "🎓",
-                            ),
-                            FeatureItem(
-                              title: "Featured",
-                            ),
-                          ],
-                        ),
-                      ),
                       const SizedBox(
                         height: 20,
                       ),
-                      Container(
-                        width: size.width * 0.95,
-                        height: 45,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: Color(0xff27384E),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Text(
-                          "Edit public details",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.inter(
-                            color: Color(0xff7EACEE),
-                            fontSize: 16,
+                      Column(
+                        children: [
+                          const BioItem(
+                            title1: "Co-Founder/CEO at",
+                            title2: "TECH පිස්සෝ",
                           ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      const Friends(),
-                      const SizedBox(
-                        height: 520,
-                      ),
+                          BioItem(
+                            title1: "Works at",
+                            title2: "Xydder Labs",
+                          ),
+                          BioItem(
+                            title1: "Works at",
+                            title2: "UBC Digital Networks Sri Lanka",
+                          ),
+                          BioItem(
+                            title1: "Contributer at",
+                            title2: "Crowdsource by Google",
+                          ),
+                          BioItem(
+                            title1: "Former member at",
+                            title2: "SLIIT FOSS Community",
+                          ),
+                          BioItem(
+                            title1: "Former Senior Member at",
+                            title2:
+                                "Mahinda Rajapaksha College - Robotics & Innovators Club",
+                          ),
+                          BioItem(
+                            title1: "Studied at",
+                            title2: "SLIIT",
+                          ),
+                          BioItem(
+                            title1: "Studied at",
+                            title2: "Mahinda Rajapaksha College , Homagama.",
+                          ),
+                          BioItem(
+                            title1: "Lives in",
+                            title2: "Homagama",
+                          ),
+                          BioItem(
+                            title1: "From",
+                            title2: "Homagama",
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.more_horiz,
+                                color: Color(0xffE4E6EA),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                "See Your About Info",
+                                style: GoogleFonts.inter(
+                                  color: Color(0xffE4E6EA),
+                                ),
+                              )
+                            ],
+                          ),
+                          const SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                FeatureItem(
+                                  title: "New",
+                                ),
+                                FeatureItem(
+                                  title: "🎓",
+                                ),
+                                FeatureItem(
+                                  title: "Featured",
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Container(
+                            width: size.width * 0.95,
+                            height: 45,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: Color(0xff27384E),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Text(
+                              "Edit public details",
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.inter(
+                                color: Color(0xff7EACEE),
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          const Friends(),
+                          const SizedBox(
+                            height: 520,
+                          ),
+                        ],
+                      )
                     ],
-                  )
-                ],
-              ),
-            )
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),
