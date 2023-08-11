@@ -18,7 +18,7 @@ class _PublishPostState extends State<PublishPost> {
           width: size.width,
           height: 1.5,
           decoration: const BoxDecoration(
-            color: Color(0xff65676A)
+            color: Color(0xff65676A),
           ),
         ),
         const SizedBox(
@@ -27,17 +27,98 @@ class _PublishPostState extends State<PublishPost> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Posts", style: GoogleFonts.inter(
-              color: Colors.white,
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-            ),),
-            Text("Filters", style: GoogleFonts.inter(
-              color: const Color(0xff6393DA),
-              fontSize: 14,
-            ),),
+            Text(
+              "Posts",
+              style: GoogleFonts.inter(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            Text(
+              "Filters",
+              style: GoogleFonts.inter(
+                color: const Color(0xff6393DA),
+                fontSize: 14,
+              ),
+            ),
           ],
-        )
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Row(
+          children: [
+            CircleAvatar(
+              radius: 20,
+              backgroundColor: const Color(0xff242525),
+              child: ClipOval(
+                child: Image.asset(
+                  "assets/images/avatar.jpeg",
+                  width: 450,
+                  height: 450,
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Text(
+              "What's on your mind?",
+              style: GoogleFonts.inter(
+                color: const Color(0xffE4E6EA),
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              ),
+            )
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Container(
+          width: size.width,
+          height: size.height * 0.040,
+          decoration: const BoxDecoration(
+            color: Color(0xff65676A),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    "Status",
+                    style: GoogleFonts.inter(
+                      color: Color(0xffE4E6EA),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Photo",
+                    style: GoogleFonts.inter(
+                      color: Color(0xffE4E6EA),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Life Event",
+                    style: GoogleFonts.inter(
+                      color: Color(0xffE4E6EA),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
       ],
     );
   }
