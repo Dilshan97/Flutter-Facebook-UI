@@ -257,8 +257,9 @@ class _ProfileState extends State<Profile> {
                             width: 50,
                             height: 45,
                             decoration: BoxDecoration(
-                                color: Color(0xff3A3B3C),
-                                borderRadius: BorderRadius.circular(10)),
+                              color: Color(0xff3A3B3C),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                             child: const Icon(
                               Icons.more_horiz,
                               color: Colors.white,
