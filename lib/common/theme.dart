@@ -7,8 +7,9 @@ ThemeData light = ThemeData(
     backgroundColor: Color(0xff242525),
   ),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    backgroundColor: Colors.white,
-    selectedItemColor: Colors.black,
+    backgroundColor: Color(0xff242526),
+    selectedItemColor: Color(0xff1B74E4),
+    unselectedItemColor: Color(0xffB0B3B8),
     elevation: 0,
     enableFeedback: false,
     type: BottomNavigationBarType.fixed,

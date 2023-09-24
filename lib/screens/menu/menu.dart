@@ -224,17 +224,17 @@ class AllShortcuts extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    final List<String> shortcuts = [
-      'Saved',
-      'Pages',
-      'Groups',
-      'Feeds',
-      'Friends',
-      'Marketplace',
-      'Video',
-      'Memories',
-      'Events',
-      'Gaming'
+    final List<Map<String, String>> shortcuts = [
+      {'label': 'Saved', 'icon': 'assets/icons/saved.png'},
+      {'label': 'Pages', 'icon': 'assets/icons/pages.png'},
+      {'label': 'Groups', 'icon': 'assets/icons/groups.png'},
+      {'label': 'Feeds', 'icon': 'assets/icons/feeds.png'},
+      {'label': 'Friends', 'icon': 'assets/icons/friends.png'},
+      {'label': 'Marketplace', 'icon': 'assets/icons/saved.png'},
+      {'label': 'Video', 'icon': 'assets/icons/video.png'},
+      {'label': 'Memories', 'icon': 'assets/icons/memories.png'},
+      {'label': 'Events', 'icon': 'assets/icons/saved.png'},
+      {'label': 'Gaming', 'icon': 'assets/icons/saved.png'},
     ];
 
     final double itemHeight = (size.height - kToolbarHeight - 24) / 8;
@@ -253,6 +253,9 @@ class AllShortcuts extends StatelessWidget {
           ),
         ),
         SizedBox(
+          height: size.height * 0.015,
+        ),
+        SizedBox(
           height: size.height / 2,
           child: GridView.count(
             crossAxisCount: 2,
@@ -263,7 +266,7 @@ class AllShortcuts extends StatelessWidget {
             children: List.generate(
               shortcuts.length,
               (index) => Container(
-                height: 20,
+                alignment: Alignment.centerLeft,
                 decoration: const BoxDecoration(
                   color: Color(0xff323436),
                   borderRadius: BorderRadius.all(Radius.circular(12)),
@@ -272,9 +275,16 @@ class AllShortcuts extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      Image.asset(
+                        shortcuts[index]['icon']!,
+                        width: 30,
+                        height: 30,
+                        fit: BoxFit.fill,
+                      ),
                       Text(
-                        shortcuts[index],
+                        shortcuts[index]['label']!,
                         style: const TextStyle(
                           color: Colors.white,
                         ),
