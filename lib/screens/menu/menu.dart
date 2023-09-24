@@ -116,7 +116,7 @@ class Menu extends StatelessWidget {
                         Stack(
                           children: [
                             Container(
-                              padding: const EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(8),
                               decoration: const BoxDecoration(
                                 color: Color(0xff393A3B),
                                 borderRadius:
@@ -200,6 +200,30 @@ class ShortCuts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
+    final List<Map<String, String>> shortcuts = [
+      {
+        'type': 'group',
+        'label': 'Software Engineers Club',
+        'image': 'assets/images/group.png'
+      },
+      {
+        'type': 'user',
+        'label': 'Pubudu Arosha Wanigarathne',
+        'image': 'assets/images/group.png'
+      },
+      {
+        'type': 'group',
+        'label': 'හෝමාගම අපි',
+        'image': 'assets/images/group.png'
+      },
+      {
+        'type': 'user',
+        'label': 'Akhila Shalinda Wijesundara',
+        'image': 'assets/images/group.png'
+      }
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -209,7 +233,62 @@ class ShortCuts extends StatelessWidget {
           style: GoogleFonts.roboto(
             color: Colors.white,
             fontWeight: FontWeight.w600,
-            fontSize: size.width * 0.035,
+            fontSize: size.width * 0.040,
+          ),
+        ),
+        SizedBox(
+          height: size.height * 0.030,
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: List.generate(
+              shortcuts.length,
+              (index) => Container(
+                width: size.width / 4,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Colors.redAccent
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    shortcuts[index]['type'] == 'user'
+                        ? CircleAvatar(
+                            child: ClipRRect(
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(50),
+                              ),
+                              child: Image.asset(
+                                shortcuts[index]['image']!,
+                                width: 60,
+                                height: 60,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          )
+                        : ClipRRect(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(16)),
+                              child: Image.asset(
+                                shortcuts[index]['image']!,
+                                height: 60,
+                                width: 60,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            SizedBox(height: size.height * 0.010,),
+                    Text(
+                      shortcuts[index]['label']!,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ),
         )
       ],
@@ -249,7 +328,7 @@ class AllShortcuts extends StatelessWidget {
           style: GoogleFonts.roboto(
             color: Colors.white,
             fontWeight: FontWeight.w600,
-            fontSize: size.width * 0.035,
+            fontSize: size.width * 0.040,
           ),
         ),
         SizedBox(
@@ -282,6 +361,9 @@ class AllShortcuts extends StatelessWidget {
                         width: 30,
                         height: 30,
                         fit: BoxFit.fill,
+                      ),
+                      SizedBox(
+                        height: size.height * 0.010,
                       ),
                       Text(
                         shortcuts[index]['label']!,
