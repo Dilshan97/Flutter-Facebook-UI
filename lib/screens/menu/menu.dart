@@ -16,6 +16,7 @@ class Menu extends StatelessWidget {
               horizontal: size.width * 0.050,
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -112,18 +113,75 @@ class Menu extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: const BoxDecoration(
-                            color: Color(0xff393A3B),
-                            borderRadius: BorderRadius.all(Radius.circular(50)),
-                          ),
-                          child: const Icon(
-                            Icons.keyboard_arrow_down,
-                            color: Colors.white,
-                          ),
+                        Stack(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: const BoxDecoration(
+                                color: Color(0xff393A3B),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(50)),
+                              ),
+                              child: const Icon(
+                                Icons.keyboard_arrow_down,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Positioned(
+                              right: 0,
+                              top: 0,
+                              child: Container(
+                                padding: const EdgeInsets.all(3),
+                                decoration: const BoxDecoration(
+                                  color: Color(0xffE41E3F),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(50)),
+                                ),
+                                child: const Text(
+                                  '9+',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         )
                       ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: size.height * 0.020,
+                ),
+                const ShortCuts(),
+                SizedBox(
+                  height: size.height * 0.020,
+                ),
+                const AllShortcuts(),
+                SizedBox(
+                  height: size.height * 0.020,
+                ),
+                SizedBox(
+                  width: size.width,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xff2F3031),
+                      foregroundColor: Colors.white,
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide.none,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'See more',
+                      style: GoogleFonts.roboto(
+                        color: Colors.white,
+                        fontSize: size.width * 0.040,
+                      ),
                     ),
                   ),
                 )
@@ -132,6 +190,103 @@ class Menu extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class ShortCuts extends StatelessWidget {
+  const ShortCuts({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Your shortcuts",
+          textAlign: TextAlign.start,
+          style: GoogleFonts.roboto(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: size.width * 0.035,
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class AllShortcuts extends StatelessWidget {
+  const AllShortcuts({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
+    final List<String> shortcuts = [
+      'Saved',
+      'Pages',
+      'Groups',
+      'Feeds',
+      'Friends',
+      'Marketplace',
+      'Video',
+      'Memories',
+      'Events',
+      'Gaming'
+    ];
+
+    final double itemHeight = (size.height - kToolbarHeight - 24) / 8;
+    final double itemWidth = size.width / 2;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "All shortcuts",
+          textAlign: TextAlign.start,
+          style: GoogleFonts.roboto(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: size.width * 0.035,
+          ),
+        ),
+        SizedBox(
+          height: size.height / 2,
+          child: GridView.count(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10.0,
+            mainAxisSpacing: 10.0,
+            scrollDirection: Axis.vertical,
+            childAspectRatio: (itemWidth / itemHeight),
+            children: List.generate(
+              shortcuts.length,
+              (index) => Container(
+                height: 20,
+                decoration: const BoxDecoration(
+                  color: Color(0xff323436),
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        shortcuts[index],
+                        style: const TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
