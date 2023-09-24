@@ -1,6 +1,8 @@
-import 'package:facebook_app_ui/screens/widgets/user_card.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'user_card.dart';
 
 class Friends extends StatefulWidget {
   const Friends({super.key});

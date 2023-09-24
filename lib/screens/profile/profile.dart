@@ -1,12 +1,10 @@
-import 'package:facebook_app_ui/screens/widgets/bio.dart';
-import 'package:facebook_app_ui/screens/widgets/bio_item.dart';
-import 'package:facebook_app_ui/screens/widgets/feature_item.dart';
-import 'package:facebook_app_ui/screens/widgets/features.dart';
-import 'package:facebook_app_ui/screens/widgets/friends.dart';
-import 'package:facebook_app_ui/screens/widgets/publish_post.dart';
-import 'package:facebook_app_ui/screens/widgets/social_media.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'widgets/bio.dart';
+import 'widgets/features.dart';
+import 'widgets/friends.dart';
+import 'widgets/publish_post.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});

@@ -1,7 +1,9 @@
-import 'package:facebook_app_ui/screens/widgets/bio_item.dart';
-import 'package:facebook_app_ui/screens/widgets/social_media.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'bio_item.dart';
+import 'social_media.dart';
 
 class Bio extends StatefulWidget {
   const Bio({super.key});

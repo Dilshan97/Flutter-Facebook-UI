@@ -1,4 +1,3 @@
-import 'package:facebook_app_ui/screens/profile.dart';
 import 'package:facebook_app_ui/screens/welcome.dart';
 import 'package:flutter/material.dart';
 
