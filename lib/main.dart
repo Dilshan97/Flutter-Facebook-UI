@@ -1,5 +1,6 @@
 import 'package:facebook_app_ui/common/theme.dart';
 import 'package:facebook_app_ui/screens/base.dart';
+import 'package:facebook_app_ui/screens/profile/profile.dart';
 import 'package:facebook_app_ui/screens/welcome.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       routes: {
         '/welcome':(context) => const Welcome(),
-        '/base':(context) => const Base()
+        '/base':(context) => const Base(),
+        '/profile':(context) => const Profile(),
       },
       initialRoute: '/base',
     );

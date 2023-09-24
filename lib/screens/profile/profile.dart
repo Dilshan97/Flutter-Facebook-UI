@@ -18,13 +18,16 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xff242525),
       appBar: AppBar(
-        backgroundColor: const Color(0xff242525),
         centerTitle: true,
-        leading: const Icon(
-          Icons.chevron_left,
-          color: Colors.white,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pop();
+          },
+          child: const Icon(
+            Icons.chevron_left,
+            color: Colors.white,
+          ),
         ),
         title: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

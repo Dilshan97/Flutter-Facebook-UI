@@ -1,3 +1,4 @@
+import 'package:facebook_app_ui/screens/menu/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -27,9 +28,7 @@ class _BaseState extends State<Base> {
     Container(
       color: Colors.purpleAccent,
     ),
-    Container(
-      color: Colors.amberAccent,
-    ),
+    Menu()
   ];
 
   @override
@@ -90,6 +89,8 @@ class BottomNavbar extends StatelessWidget {
         (index) => BottomNavigationBarItem(
           icon: Icon(navIcons[index]),
           label: navLabels[index],
+          backgroundColor: Colors.blue,
+          activeIcon: Icon(navIcons[index], color: Colors.blue, weight: 1.2,)
         ),
       ),
     );
