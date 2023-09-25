@@ -167,7 +167,7 @@ class Menu extends StatelessWidget {
                   width: size.width,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xff2F3031),
+                      backgroundColor: const Color(0xff2F3031),
                       foregroundColor: Colors.white,
                       elevation: 0,
                       shape: RoundedRectangleBorder(
@@ -184,12 +184,139 @@ class Menu extends StatelessWidget {
                       ),
                     ),
                   ),
-                )
+                ),
+                SizedBox(
+                  height: size.height * 0.020,
+                ),
+                Accordian(
+                  title: 'Help & Support',
+                ),
+                Accordian(
+                  title: 'Setting & Privacy',
+                ),
+                Accordian(
+                  title: 'Also from Meta',
+                ),
+                SizedBox(
+                  height: size.height * 0.020,
+                ),
+                SizedBox(
+                  width: size.width,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xff2F3031),
+                      foregroundColor: Colors.white,
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide.none,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'Log out',
+                      style: GoogleFonts.roboto(
+                        color: Colors.white,
+                        fontSize: size.width * 0.040,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: size.height * 0.020,
+                ),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class Accordian extends StatefulWidget {
+  final String title;
+
+  const Accordian({
+    super.key,
+    required this.title,
+  });
+
+  @override
+  State<Accordian> createState() => _AccordianState();
+}
+
+class _AccordianState extends State<Accordian> {
+  bool _showContent = false;
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  widget.title,
+                  style: GoogleFonts.roboto(
+                    color: Colors.white,
+                    fontSize: size.width * 0.040,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  _showContent = !_showContent;
+                });
+              },
+              child: Icon(
+                _showContent
+                    ? Icons.keyboard_arrow_up
+                    : Icons.keyboard_arrow_down,
+                color: Colors.white,
+              ),
+            )
+          ],
+        ),
+        _showContent
+            ? Column(
+                children: List.generate(
+                  2,
+                  (index) => Container(
+                    width: size.width,
+                    padding: const EdgeInsets.all(18),
+                    margin: EdgeInsets.symmetric(
+                      vertical: size.height * 0.008,
+                    ),
+                    decoration: const BoxDecoration(
+                      color: Color(0xff323436),
+                      borderRadius: BorderRadius.all(Radius.circular(12)),
+                    ),
+                    child: Row(
+                      children: [
+                        Text(
+                          'Threads',
+                          style: GoogleFonts.roboto(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            : Container(),
+        const Divider(
+          color: Color(0xff65676B),
+        )
+      ],
     );
   }
 }
