@@ -210,7 +210,7 @@ class ShortCuts extends StatelessWidget {
       {
         'type': 'user',
         'label': 'Pubudu Arosha Wanigarathne',
-        'image': 'assets/images/group.png'
+        'image': 'assets/images/user1.jpg'
       },
       {
         'type': 'group',
@@ -220,7 +220,7 @@ class ShortCuts extends StatelessWidget {
       {
         'type': 'user',
         'label': 'Akhila Shalinda Wijesundara',
-        'image': 'assets/images/group.png'
+        'image': 'assets/images/user2.jpg'
       }
     ];
 
@@ -247,40 +247,39 @@ class ShortCuts extends StatelessWidget {
               (index) => Container(
                 width: size.width / 4,
                 alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Colors.redAccent
-                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     shortcuts[index]['type'] == 'user'
-                        ? CircleAvatar(
-                            child: ClipRRect(
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(50),
-                              ),
-                              child: Image.asset(
-                                shortcuts[index]['image']!,
-                                width: 60,
-                                height: 60,
-                                fit: BoxFit.cover,
-                              ),
+                        ? ClipRRect(
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(50),
+                            ),
+                            child: Image.asset(
+                              shortcuts[index]['image']!,
+                              width: 60,
+                              height: 60,
+                              fit: BoxFit.cover,
                             ),
                           )
                         : ClipRRect(
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(16)),
-                              child: Image.asset(
-                                shortcuts[index]['image']!,
-                                height: 60,
-                                width: 60,
-                                fit: BoxFit.cover,
-                              ),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(16)),
+                            child: Image.asset(
+                              shortcuts[index]['image']!,
+                              height: 60,
+                              width: 60,
+                              fit: BoxFit.cover,
                             ),
-                            SizedBox(height: size.height * 0.010,),
+                          ),
+                    SizedBox(
+                      height: size.height * 0.010,
+                    ),
                     Text(
                       shortcuts[index]['label']!,
                       textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
                       style: const TextStyle(
                         color: Colors.white,
                       ),
