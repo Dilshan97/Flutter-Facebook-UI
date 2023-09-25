@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:facebook_app_ui/screens/profile.dart';
+import 'package:facebook_app_ui/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
