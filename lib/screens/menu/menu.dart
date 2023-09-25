@@ -234,19 +234,17 @@ class AccordianList extends StatelessWidget {
       'label': 'Help & Support',
       'icon': 'assets/icons/help.png',
       'children': [
-        {
-          'label': 'Threads',
-        },
-        {'label': 'WhatsApp'}
+        {'label': 'Help Center'},
+        {'label': 'Support Inbox'},
+        {'label': 'Report a problem'},
+        {'label': 'Terms & Policies'},
       ]
     },
     {
       'label': 'Settings & Privacy',
       'icon': 'assets/icons/help.png',
       'children': [
-        {
-          'label': 'Threads',
-        },
+        {'label': 'Threads'},
         {'label': 'WhatsApp'}
       ]
     },
@@ -254,9 +252,7 @@ class AccordianList extends StatelessWidget {
       'label': 'Also from meta',
       'icon': 'assets/icons/help.png',
       'children': [
-        {
-          'label': 'Threads',
-        },
+        {'label': 'Threads'},
         {'label': 'WhatsApp'}
       ]
     },
@@ -437,28 +433,52 @@ class ShortCuts extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    shortcuts[index]['type'] == 'user'
-                        ? ClipRRect(
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(50),
+                    Stack(
+                      children: [
+                        shortcuts[index]['type'] == 'user'
+                            ? ClipRRect(
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(50),
+                                ),
+                                child: Image.asset(
+                                  shortcuts[index]['image']!,
+                                  width: 60,
+                                  height: 60,
+                                  fit: BoxFit.cover,
+                                ),
+                              )
+                            : ClipRRect(
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(16)),
+                                child: Image.asset(
+                                  shortcuts[index]['image']!,
+                                  height: 60,
+                                  width: 60,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                        Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: Container(
+                            alignment: Alignment.center,
+                            decoration: const BoxDecoration(
+                              color: Color(0xff2F3031),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50)),
                             ),
-                            child: Image.asset(
-                              shortcuts[index]['image']!,
-                              width: 60,
-                              height: 60,
-                              fit: BoxFit.cover,
-                            ),
-                          )
-                        : ClipRRect(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(16)),
-                            child: Image.asset(
-                              shortcuts[index]['image']!,
-                              height: 60,
-                              width: 60,
-                              fit: BoxFit.cover,
+                            child: Padding(
+                              padding: const EdgeInsets.all(3.0),
+                              child: Image.asset(
+                                shortcuts[index]['type'] == 'user' ? 'assets/icons/friends.png' : 'assets/icons/groups.png',
+                                fit: BoxFit.cover,
+                                width: size.width * 0.050,
+                              ),
                             ),
                           ),
+                        ),
+                      ],
+                    ),
                     SizedBox(
                       height: size.height * 0.010,
                     ),
