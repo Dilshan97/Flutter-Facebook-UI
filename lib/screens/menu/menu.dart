@@ -188,15 +188,7 @@ class Menu extends StatelessWidget {
                 SizedBox(
                   height: size.height * 0.020,
                 ),
-                Accordian(
-                  title: 'Help & Support',
-                ),
-                Accordian(
-                  title: 'Setting & Privacy',
-                ),
-                Accordian(
-                  title: 'Also from Meta',
-                ),
+                AccordianList(),
                 SizedBox(
                   height: size.height * 0.020,
                 ),
@@ -234,12 +226,67 @@ class Menu extends StatelessWidget {
   }
 }
 
+class AccordianList extends StatelessWidget {
+  const AccordianList({super.key});
+
+  static final List<Map<String, dynamic>> menu = [
+    {
+      'label': 'Help & Support',
+      'icon': 'assets/icons/help.png',
+      'children': [
+        {
+          'label': 'Threads',
+        },
+        {'label': 'WhatsApp'}
+      ]
+    },
+    {
+      'label': 'Settings & Privacy',
+      'icon': 'assets/icons/help.png',
+      'children': [
+        {
+          'label': 'Threads',
+        },
+        {'label': 'WhatsApp'}
+      ]
+    },
+    {
+      'label': 'Also from meta',
+      'icon': 'assets/icons/help.png',
+      'children': [
+        {
+          'label': 'Threads',
+        },
+        {'label': 'WhatsApp'}
+      ]
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: List.generate(
+        menu.length,
+        (index) => Accordian(
+          title: menu[index]['label'],
+          icon: menu[index]['icon'],
+          options: menu[index]['children'],
+        ),
+      ),
+    );
+  }
+}
+
 class Accordian extends StatefulWidget {
   final String title;
+  final String icon;
+  final List<Map<String, dynamic>> options;
 
   const Accordian({
     super.key,
     required this.title,
+    required this.options,
+    required this.icon,
   });
 
   @override
@@ -254,41 +301,54 @@ class _AccordianState extends State<Accordian> {
     Size size = MediaQuery.of(context).size;
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  widget.title,
-                  style: GoogleFonts.roboto(
-                    color: Colors.white,
-                    fontSize: size.width * 0.040,
-                    fontWeight: FontWeight.w500,
+        Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: size.height * 0.005,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    widget.icon,
+                    fit: BoxFit.cover,
+                    width: size.width * 0.090,
                   ),
-                ),
-              ],
-            ),
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  _showContent = !_showContent;
-                });
-              },
-              child: Icon(
-                _showContent
-                    ? Icons.keyboard_arrow_up
-                    : Icons.keyboard_arrow_down,
-                color: Colors.white,
+                  SizedBox(
+                    width: size.width * 0.020,
+                  ),
+                  Text(
+                    widget.title,
+                    style: GoogleFonts.roboto(
+                      color: Colors.white,
+                      fontSize: size.width * 0.040,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
               ),
-            )
-          ],
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _showContent = !_showContent;
+                  });
+                },
+                child: Icon(
+                  _showContent
+                      ? Icons.keyboard_arrow_up
+                      : Icons.keyboard_arrow_down,
+                  color: Colors.white,
+                ),
+              )
+            ],
+          ),
         ),
         _showContent
             ? Column(
                 children: List.generate(
-                  2,
+                  widget.options.length,
                   (index) => Container(
                     width: size.width,
                     padding: const EdgeInsets.all(18),
@@ -302,7 +362,7 @@ class _AccordianState extends State<Accordian> {
                     child: Row(
                       children: [
                         Text(
-                          'Threads',
+                          widget.options[index]['label'],
                           style: GoogleFonts.roboto(
                             color: Colors.white,
                           ),
@@ -364,7 +424,7 @@ class ShortCuts extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: size.height * 0.030,
+          height: size.height * 0.015,
         ),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
