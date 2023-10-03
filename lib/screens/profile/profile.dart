@@ -286,7 +286,7 @@ class _ProfileState extends State<Profile> {
                             height: 45,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: Color(0xff27384E),
+                              color: const Color(0xff27384E),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Text(
