@@ -1,4 +1,5 @@
 import 'package:facebook_app_ui/screens/menu/menu.dart';
+import 'package:facebook_app_ui/screens/notifications/notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -25,10 +26,8 @@ class _BaseState extends State<Base> {
     Container(
       color: Colors.yellowAccent,
     ),
-    Container(
-      color: Colors.purpleAccent,
-    ),
-    Menu()
+    const Notifications(),
+    const Menu()
   ];
 
   @override
