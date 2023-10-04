@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
-import 'widgets/nav_button.dart';
+import '../widgets/nav_button.dart';
 
 class Marketplace extends StatelessWidget {
   const Marketplace({super.key});
