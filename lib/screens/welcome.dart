@@ -19,9 +19,7 @@ class _WelcomeState extends State<Welcome> {
   }
 
   Future<void> navigationPage() async {
-    Navigator.of(context).pushAndRemoveUntil(
-        PageTransition(type: PageTransitionType.fade, child: const Profile()),
-        (route) => false);
+   Navigator.of(context).pushNamedAndRemoveUntil('/base', (route) => false);     
   }
 
   @override
