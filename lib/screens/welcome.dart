@@ -1,9 +1,6 @@
 import 'dart:async';
-
-import 'package:facebook_app_ui/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
@@ -57,7 +54,8 @@ class _WelcomeState extends State<Welcome> {
                     color: Colors.white60,
                     fontWeight: FontWeight.w500,
                     letterSpacing: 4,
-                    fontSize: 14),
+                    fontSize: 14,
+                ),
               )
             ],
           )
