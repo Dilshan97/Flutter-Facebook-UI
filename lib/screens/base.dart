@@ -1,5 +1,6 @@
 import 'package:facebook_app_ui/screens/menu/menu.dart';
 import 'package:facebook_app_ui/screens/notifications/notifications.dart';
+import 'package:facebook_app_ui/screens/video/video.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -21,9 +22,7 @@ class _BaseState extends State<Base> {
       color: Colors.greenAccent,
     ),
     const FriendRequests(),
-    Container(
-      color: Colors.redAccent,
-    ),
+    const Video(),
     const Marketplace(),
     const Notifications(),
     const Menu()
@@ -88,7 +87,11 @@ class BottomNavbar extends StatelessWidget {
           icon: Icon(navIcons[index]),
           label: navLabels[index],
           backgroundColor: Colors.blue,
-          activeIcon: Icon(navIcons[index], color: Colors.blue, weight: 1.2,)
+          activeIcon: Icon(
+            navIcons[index],
+            color: Colors.blue,
+            weight: 1.2,
+          ),
         ),
       ),
     );
