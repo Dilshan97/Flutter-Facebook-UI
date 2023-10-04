@@ -3,6 +3,7 @@ import 'package:facebook_app_ui/screens/notifications/notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'friends/friend_requests.dart';
 import 'marketplace/marketplace.dart';
 
 class Base extends StatefulWidget {
@@ -19,9 +20,7 @@ class _BaseState extends State<Base> {
     Container(
       color: Colors.greenAccent,
     ),
-    Container(
-      color: Colors.blueAccent,
-    ),
+    const FriendRequests(),
     Container(
       color: Colors.redAccent,
     ),

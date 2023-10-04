@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         '/base':(context) => const Base(),
         '/profile':(context) => const Profile(),
       },
-      initialRoute: '/base',
+      initialRoute: '/welcome',
     );
   }
 }
