@@ -1,3 +1,4 @@
+import 'package:facebook_app_ui/screens/home/home.dart';
 import 'package:facebook_app_ui/screens/menu/menu.dart';
 import 'package:facebook_app_ui/screens/notifications/notifications.dart';
 import 'package:facebook_app_ui/screens/video/video.dart';
@@ -18,9 +19,7 @@ class _BaseState extends State<Base> {
   int currentIndex = 0;
 
   List<Widget> children = [
-    Container(
-      color: Colors.greenAccent,
-    ),
+    const Home(),
     const FriendRequests(),
     const Video(),
     const Marketplace(),
