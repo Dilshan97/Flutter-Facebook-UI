@@ -1,10 +1,34 @@
 import 'package:facebook_app_ui/screens/home/widgets/post.dart';
+import 'package:facebook_app_ui/screens/home/widgets/story.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
+
+ static const List stories = [
+    {
+      'name': 'Nadun Madushanka',
+      'image': 'assets/images/stories/1.jpg',
+      'avatar': 'assets/images/stories/avatar-1.jpeg'
+    },
+    {
+      'name': 'Apple Asia',
+      'image': 'assets/images/stories/2.jpg',
+      'avatar': 'assets/images/stories/avatar-2.jpeg'
+    },
+    {
+      'name': 'iShop.lk',
+      'image': 'assets/images/stories/3.jpg',
+      'avatar': 'assets/images/stories/avatar-3.jpeg'
+    },
+    {
+      'name': 'Travel With Wife',
+      'image': 'assets/images/stories/4.jpg',
+      'avatar': 'assets/images/stories/avatar-4.jpeg'
+    }
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -120,50 +144,11 @@ class Home extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: List.generate(
-                      10,
-                      (index) => Container(
-                        height: size.height * 0.25,
-                        width: size.width * 0.30,
-                        margin: EdgeInsets.symmetric(
-                          horizontal: size.width * 0.010,
-                        ),
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(16)),
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/group.png'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              top: 5,
-                              left: 5,
-                              child: ClipRRect(
-                                borderRadius:
-                                    const BorderRadius.all(Radius.circular(50)),
-                                child: CircleAvatar(
-                                  backgroundColor: Colors.blue,
-                                  child: Image.asset(
-                                    'assets/images/user1.jpg',
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              bottom: 10,
-                              left: 5,
-                              child: Text(
-                                "Pubudu Arosha Wanigarathna",
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.roboto(
-                                  color: Colors.white,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
+                      stories.length,
+                      (index) => Story(
+                        image: stories[index]['image'],
+                        name: stories[index]['name'],
+                        avatar: stories[index]['avatar'],
                       ),
                     ),
                   ),

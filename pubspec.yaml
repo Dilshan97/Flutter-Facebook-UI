@@ -65,6 +65,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/marketplace/
+    - assets/images/stories/
     - assets/icons/
     - assets/icons/post/
   #   - images/a_dot_ham.jpeg
