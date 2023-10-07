@@ -165,16 +165,8 @@ class Marketplace extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [],
-                    ),
-                  ],
-                ),
                 SizedBox(
-                  height: size.height * 0.020,
+                  height: size.height * 0.010,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
