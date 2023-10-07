@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             alignment: Alignment.center,
             decoration: const BoxDecoration(
-              color: Color(0xff2F3031),
+              color: Color(0xff3a3b3b),
               borderRadius: BorderRadius.all(Radius.circular(50)),
             ),
             child: const Icon(
@@ -41,12 +41,13 @@ class Home extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             alignment: Alignment.center,
             decoration: const BoxDecoration(
-              color: Color(0xff2F3031),
+              color: Color(0xff3a3b3b),
               borderRadius: BorderRadius.all(Radius.circular(50)),
             ),
             child: Image.asset(
               'assets/icons/messenger.png',
               color: Colors.white,
+              width: size.width * 0.065,
             ),
           )
         ],
@@ -61,52 +62,6 @@ class Home extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    // Row(
-                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    //   crossAxisAlignment: CrossAxisAlignment.center,
-                    //   children: [
-                    //     Image.asset(
-                    //       'assets/images/logo-1.png',
-                    //       width: size.width * 0.40,
-                    //       color: Colors.white,
-                    //     ),
-                    //     Row(
-                    //       mainAxisAlignment: MainAxisAlignment.end,
-                    //       crossAxisAlignment: CrossAxisAlignment.center,
-                    //       children: [
-                    //         Container(
-                    //           padding: const EdgeInsets.all(10),
-                    //           alignment: Alignment.center,
-                    //           decoration: const BoxDecoration(
-                    //             color: Color(0xff2F3031),
-                    //             borderRadius:
-                    //                 BorderRadius.all(Radius.circular(50)),
-                    //           ),
-                    //           child: const Icon(
-                    //             Iconsax.search_normal,
-                    //             color: Colors.white,
-                    //           ),
-                    //         ),
-                    //         SizedBox(
-                    //           width: size.width * 0.020,
-                    //         ),
-                    //         Container(
-                    //           padding: const EdgeInsets.all(10),
-                    //           alignment: Alignment.center,
-                    //           decoration: const BoxDecoration(
-                    //             color: Color(0xff2F3031),
-                    //             borderRadius:
-                    //                 BorderRadius.all(Radius.circular(50)),
-                    //           ),
-                    //           child: const Icon(
-                    //             Iconsax.message,
-                    //             color: Colors.white,
-                    //           ),
-                    //         )
-                    //       ],
-                    //     )
-                    //   ],
-                    // ),
                     SizedBox(
                       height: size.height * 0.015,
                     ),
@@ -120,7 +75,7 @@ class Home extends StatelessWidget {
                           children: [
                             ClipRRect(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(50)),
+                                  const BorderRadius.all(Radius.circular(50)),
                               child: CircleAvatar(
                                 child: Image.asset(
                                   'assets/images/avatar.jpeg',
