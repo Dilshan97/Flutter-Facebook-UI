@@ -10,6 +10,9 @@ class Post extends StatelessWidget {
   final String time;
   final bool isPublic;
   final String type;
+  final String? post;
+  final String? postImage;
+  final bool verify;
 
   const Post({
     super.key,
@@ -18,6 +21,9 @@ class Post extends StatelessWidget {
     required this.time,
     required this.isPublic,
     required this.type,
+    this.post,
+    this.postImage,
+    this.verify = false,
   });
 
   @override
@@ -50,11 +56,25 @@ class Post extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          name,
-                          style: GoogleFonts.roboto(
-                            color: const Color(0xffe4e6eb),
-                          ),
+                        Row(
+                          children: [
+                            Text(
+                              name,
+                              style: GoogleFonts.roboto(
+                                color: const Color(0xffe4e6eb),
+                              ),
+                            ),
+                            SizedBox(
+                              width: size.width * 0.007,
+                            ),
+                            verify
+                                ? Icon(
+                                    Iconsax.verify5,
+                                    color: const Color(0xff0866ff),
+                                    size: size.width * 0.050,
+                                  )
+                                : Container()
+                          ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -102,20 +122,44 @@ class Post extends StatelessWidget {
           ),
           type == "image"
               ? Image.asset(
-                  'assets/images/post.jpeg',
+                  postImage!,
                   fit: BoxFit.cover,
                 )
-              : Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: size.width * 0.020,
-                  ),
-                  child: Text(
-                    "Tough battle out there today, South Africa claimed the victory. We'll bounce back stronger!",
-                    style: GoogleFonts.roboto(
-                      color: Colors.white,
+              : type == "text"
+                  ? Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: size.width * 0.020,
+                      ),
+                      child: Text(
+                        post!,
+                        style: GoogleFonts.roboto(
+                          color: Colors.white,
+                        ),
+                      ),
+                    )
+                  : Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: size.width * 0.020,
+                          ),
+                          child: Text(
+                            post!,
+                            style: GoogleFonts.roboto(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: size.height * 0.010,
+                        ),
+                        Image.asset(
+                          postImage!,
+                          fit: BoxFit.cover,
+                        )
+                      ],
                     ),
-                  ),
-                ),
           SizedBox(
             height: size.height * 0.010,
           ),
