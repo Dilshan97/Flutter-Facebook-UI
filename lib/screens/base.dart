@@ -73,6 +73,7 @@ class BottomNavbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return BottomNavigationBar(
       currentIndex: currentIndex,
       onTap: onTap,
@@ -80,16 +81,35 @@ class BottomNavbar extends StatelessWidget {
       type: BottomNavigationBarType.fixed,
       showSelectedLabels: true,
       showUnselectedLabels: true,
+      enableFeedback: true,
+      unselectedLabelStyle: TextStyle(
+        fontSize: size.width * 0.025,
+        fontWeight: FontWeight.w500
+      ),
+      selectedLabelStyle: TextStyle(
+        fontSize: size.width * 0.025,
+        fontWeight: FontWeight.w500
+      ),
       items: List.generate(
         navIcons.length,
         (index) => BottomNavigationBarItem(
-          icon: Icon(navIcons[index]),
           label: navLabels[index],
           backgroundColor: Colors.blue,
-          activeIcon: Icon(
-            navIcons[index],
-            color: Colors.blue,
-            weight: 1.2,
+          icon: Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: size.height * 0.010,
+            ),
+            child: Icon(navIcons[index]),
+          ),
+          activeIcon: Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: size.height * 0.010,
+            ),
+            child: Icon(
+              navIcons[index],
+              color: Colors.blue,
+              weight: 1.2,
+            ),
           ),
         ),
       ),
