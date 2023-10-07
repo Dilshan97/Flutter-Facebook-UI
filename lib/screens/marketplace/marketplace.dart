@@ -93,6 +93,70 @@ class Marketplace extends StatelessWidget {
       },
     ];
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: false,
+        title: Text(
+          "Marketplace",
+          style: GoogleFonts.roboto(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: size.width * 0.070,
+          ),
+        ),
+        actions: [
+          Container(
+            width: 45,
+            height: 45,
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.center,
+            decoration: const BoxDecoration(
+              color: Color(0xff2F3031),
+              borderRadius: BorderRadius.all(Radius.circular(50)),
+            ),
+            child: const Icon(
+              Iconsax.notification,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            width: size.width * 0.010,
+          ),
+          Container(
+            width: 45,
+            height: 45,
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.center,
+            decoration: const BoxDecoration(
+              color: Color(0xff2F3031),
+              borderRadius: BorderRadius.all(Radius.circular(50)),
+            ),
+            child: const Icon(
+              Iconsax.user,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            width: size.width * 0.010,
+          ),
+          Container(
+            width: 45,
+            height: 45,
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.center,
+            decoration: const BoxDecoration(
+              color: Color(0xff2F3031),
+              borderRadius: BorderRadius.all(Radius.circular(50)),
+            ),
+            child: const Icon(
+              Iconsax.search_normal,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            width: size.width * 0.010,
+          ),
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -104,59 +168,8 @@ class Marketplace extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "Marketplace",
-                      style: GoogleFonts.roboto(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: size.width * 0.070,
-                      ),
-                    ),
                     Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(10),
-                          alignment: Alignment.center,
-                          decoration: const BoxDecoration(
-                            color: Color(0xff2F3031),
-                            borderRadius: BorderRadius.all(Radius.circular(50)),
-                          ),
-                          child: const Icon(
-                            Iconsax.notification,
-                            color: Colors.white,
-                          ),
-                        ),
-                        SizedBox(
-                          width: size.width * 0.010,
-                        ),
-                        Container(
-                          padding: const EdgeInsets.all(10),
-                          alignment: Alignment.center,
-                          decoration: const BoxDecoration(
-                            color: Color(0xff2F3031),
-                            borderRadius: BorderRadius.all(Radius.circular(50)),
-                          ),
-                          child: const Icon(
-                            Iconsax.user,
-                            color: Colors.white,
-                          ),
-                        ),
-                        SizedBox(
-                          width: size.width * 0.010,
-                        ),
-                        Container(
-                          padding: const EdgeInsets.all(10),
-                          alignment: Alignment.center,
-                          decoration: const BoxDecoration(
-                            color: Color(0xff2F3031),
-                            borderRadius: BorderRadius.all(Radius.circular(50)),
-                          ),
-                          child: const Icon(
-                            Iconsax.search_normal,
-                            color: Colors.white,
-                          ),
-                        )
-                      ],
+                      children: [],
                     ),
                   ],
                 ),
