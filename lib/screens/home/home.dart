@@ -7,7 +7,7 @@ import 'package:iconsax/iconsax.dart';
 class Home extends StatelessWidget {
   const Home({super.key});
 
- static const List stories = [
+  static const List stories = [
     {
       'name': 'Nadun Madushanka',
       'image': 'assets/images/stories/1.jpg',
@@ -27,6 +27,80 @@ class Home extends StatelessWidget {
       'name': 'Travel With Wife',
       'image': 'assets/images/stories/4.jpg',
       'avatar': 'assets/images/stories/avatar-4.jpeg'
+    }
+  ];
+
+  static const List posts = [
+    {
+      'name': 'Wild Cookbook',
+      'image': 'assets/images/posts/avatar-1.jpeg',
+      'time': '2 days ago',
+      'isPublic': true,
+      'type': 'mixd',
+      'post': 'Vitamin sea 🌊',
+      'postImage': 'assets/images/posts/post-1.jpg'
+    },
+    {
+      'name': 'Barista Sri Lanka',
+      'image': 'assets/images/posts/avatar-2.jpg',
+      'time': 'a day ago',
+      'isPublic': true,
+      'type': 'mixd',
+      'post':
+          'It’s a beautiful day and we are ready to provide you with love, comfort and the best coffee brewed with lot of happiness throughout the day 🫶🏽\n\nHead over to any of our outlets, our barista crew will be waiting for you with the biggest smile to make sure your coffee experience at Barista is something new, something different and something to be cherished 🧡',
+      'postImage': 'assets/images/posts/post-2.jpeg'
+    },
+    {
+      'name': 'MACHANG',
+      'image': 'assets/images/posts/avatar-3.png',
+      'time': '9 hours ago',
+      'isPublic': true,
+      'type': 'mixd',
+      'post':
+          'ඔන්න හරියටම World Cup පටන් අරගෙන තියෙන්නෙ මචං! අද අපේ 🇱🇰 කොල්ලො සෙල්ලම් 🏏 කරන පළවෙනි දවස! ඔයාලත් එන්න Cheer කරන්න 🥳❤️‍🔥\n#machang #chill #cwc2023 #cricketworldcup #beer #deliciousfood #friends #LiveScreening',
+      'postImage': 'assets/images/posts/post-3.jpeg'
+    },
+    {
+      'name': 'ICC - International Cricket Council',
+      'image': 'assets/images/posts/avatar-4.jpeg',
+      'time': '2 days ago',
+      'isPublic': true,
+      'type': 'mixd',
+      'post':
+          'Shakib Al Hasan continues his charge up the all-time list at #CWC23 📈',
+      'postImage': 'assets/images/posts/post-4.jpeg',
+      'verify': true,
+    },
+    {
+      'name': 'Malith Ishan',
+      'image': 'assets/images/posts/avatar-5.jpeg',
+      'time': '15 hours ago',
+      'isPublic': true,
+      'type': 'mixd',
+      'post':
+          'Team 🫶🏻',
+      'postImage': 'assets/images/posts/post-5.jpeg',
+    },
+     {
+      'name': 'Aluth',
+      'image': 'assets/images/posts/avatar-6.png',
+      'time': '21 hours ago',
+      'isPublic': true,
+      'type': 'mixd',
+      'post':
+          '🙄 #teachersday',
+      'postImage': 'assets/images/posts/post-6.jpeg',
+    },
+    {
+      'name': 'Newsfirst.lk',
+       'image': 'assets/images/posts/avatar-7.jpeg',
+      'time': '3 hours ago',
+      'isPublic': true,
+      'type': 'mixd',
+      'post':
+          "MATCH RESULTS 🙌\n𝐂𝐖𝐂 𝟐𝟎𝟐𝟑🏏🏆 | 𝟒𝐭𝐡 𝐌𝐚𝐭𝐜𝐡\n 🇱🇰 𝗦𝗥𝗜 𝗟𝗔𝗡𝗞𝗔 𝗩𝗦 𝗦𝗢𝗨𝗧𝗛 𝗔𝗙𝗥𝗜𝗖𝗔 🇿🇦\nRead more -https://news1st.lk/3tnpoqP\nICC Men's Cricket World Cup 2023🏏🏆\nLive & Exclusive on TV1 🔺📺\nWatch Online: www.sirasatv.lk\n\n#SLvSA #CWC23 #ICCWorldCup2023 #CricketWorldCup #WorldCupOnTV1 #OfficialBroadcaster #TV1 #SirasaTV",
+      'postImage': 'assets/images/posts/post-7.jpeg',
+      'verify': true,
     }
   ];
 
@@ -166,13 +240,16 @@ class Home extends StatelessWidget {
               ),
               Column(
                 children: List.generate(
-                  20,
-                  (index) => const Post(
-                    name: 'Pubudu Arosha Wanigarathna',
-                    image: 'assets/images/user1.jpg',
-                    time: '2 hours ago',
-                    isPublic: true,
-                    type: 'text',
+                  posts.length,
+                  (index) => Post(
+                    name: posts[index]['name'],
+                    image: posts[index]['image'],
+                    time: posts[index]['time'],
+                    isPublic: posts[index]['isPublic'],
+                    type: posts[index]['type'],
+                    post: posts[index]['post'],
+                    postImage: posts[index]['postImage'],
+                    verify: posts[index]['verify']?? false,
                   ),
                 ),
               )

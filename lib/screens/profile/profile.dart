@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:iconsax/iconsax.dart';
 
 import 'widgets/bio.dart';
 import 'widgets/features.dart';
@@ -179,6 +180,14 @@ class _ProfileState extends State<Profile> {
                                 fontSize: 16,
                               ),
                             ),
+                            WidgetSpan(
+                              alignment: PlaceholderAlignment.middle,
+                              child: Icon(
+                                Iconsax.verify5,
+                                color: const Color(0xff0866ff),
+                                size: size.width * 0.050,
+                              ),
+                            )
                           ],
                         ),
                       ),
