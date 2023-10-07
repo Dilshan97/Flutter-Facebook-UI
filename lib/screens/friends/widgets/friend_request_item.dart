@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FriendRequestItem extends StatelessWidget {
-  const FriendRequestItem({super.key});
+  final String name;
+  final String image;
+
+  const FriendRequestItem({
+    super.key,
+    required this.name,
+    required this.image,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +24,9 @@ class FriendRequestItem extends StatelessWidget {
           ClipRRect(
             borderRadius: const BorderRadius.all(Radius.circular(50)),
             child: Image.asset(
-              'assets/images/user1.jpg',
+              image,
               fit: BoxFit.cover,
+              width: size.width * 0.16,
             ),
           ),
           SizedBox(
@@ -33,7 +41,7 @@ class FriendRequestItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Pubudu Arosha",
+                      name,
                       style: GoogleFonts.roboto(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
