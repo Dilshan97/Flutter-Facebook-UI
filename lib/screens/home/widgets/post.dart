@@ -67,11 +67,13 @@ class Post extends StatelessWidget {
                             SizedBox(
                               width: size.width * 0.007,
                             ),
-                            verify ? Icon(
-                              Iconsax.verify5,
-                              color: const Color(0xff0866ff),
-                              size: size.width * 0.050,
-                            ) : Container()
+                            verify
+                                ? Icon(
+                                    Iconsax.verify5,
+                                    color: const Color(0xff0866ff),
+                                    size: size.width * 0.050,
+                                  )
+                                : Container()
                           ],
                         ),
                         Row(
@@ -138,10 +140,15 @@ class Post extends StatelessWidget {
                   : Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          post!,
-                          style: GoogleFonts.roboto(
-                            color: Colors.white,
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: size.width * 0.020,
+                          ),
+                          child: Text(
+                            post!,
+                            style: GoogleFonts.roboto(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                         SizedBox(
