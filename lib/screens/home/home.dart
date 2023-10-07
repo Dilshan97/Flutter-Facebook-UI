@@ -182,7 +182,13 @@ class Home extends StatelessWidget {
               Column(
                 children: List.generate(
                   20,
-                  (index) => const Post(),
+                  (index) => const Post(
+                    name: 'Pubudu Arosha Wanigarathna',
+                    image: 'assets/images/user1.jpg',
+                    time: '2 hours ago',
+                    isPublic: true,
+                    type: 'text',
+                  ),
                 ),
               )
             ],

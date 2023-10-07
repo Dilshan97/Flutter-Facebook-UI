@@ -68,7 +68,7 @@ class BottomNavbar extends StatelessWidget {
     Iconsax.video_play,
     Iconsax.shop,
     Iconsax.notification,
-    Iconsax.menu,
+    Iconsax.menu_1,
   ];
 
   @override

@@ -12,6 +12,36 @@ class FriendRequests extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: false,
+        title: Text(
+          "Friends",
+          style: GoogleFonts.roboto(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: size.width * 0.070,
+          ),
+        ),
+        actions: [
+          Container(
+            width: 45,
+            height: 45,
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.center,
+            decoration: const BoxDecoration(
+              color: Color(0xff2F3031),
+              borderRadius: BorderRadius.all(Radius.circular(50)),
+            ),
+            child: const Icon(
+              Iconsax.search_normal,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            width: size.width * 0.010,
+          ),
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -20,33 +50,8 @@ class FriendRequests extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Friends",
-                      style: GoogleFonts.roboto(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: size.width * 0.070,
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      alignment: Alignment.center,
-                      decoration: const BoxDecoration(
-                        color: Color(0xff2F3031),
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
-                      ),
-                      child: const Icon(
-                        Iconsax.search_normal,
-                        color: Colors.white,
-                      ),
-                    )
-                  ],
-                ),
                 SizedBox(
-                  height: size.height * 0.020,
+                  height: size.height * 0.010,
                 ),
                 Row(
                   children: [
@@ -91,7 +96,8 @@ class FriendRequests extends StatelessWidget {
                   height: size.height * 0.020,
                 ),
                 Column(
-                  children: List.generate(100, (index) => const FriendRequestItem()),
+                  children:
+                      List.generate(100, (index) => const FriendRequestItem()),
                 )
               ],
             ),

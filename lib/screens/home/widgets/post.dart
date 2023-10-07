@@ -5,7 +5,20 @@ import 'package:iconsax/iconsax.dart';
 import 'post_action.dart';
 
 class Post extends StatelessWidget {
-  const Post({super.key});
+  final String name;
+  final String image;
+  final String time;
+  final bool isPublic;
+  final String type;
+
+  const Post({
+    super.key,
+    required this.name,
+    required this.image,
+    required this.time,
+    required this.isPublic,
+    required this.type,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +40,7 @@ class Post extends StatelessWidget {
                     ClipRRect(
                       borderRadius: const BorderRadius.all(Radius.circular(50)),
                       child: CircleAvatar(
-                        child: Image.asset('assets/images/user1.jpg'),
+                        child: Image.asset(image),
                       ),
                     ),
                     SizedBox(
@@ -38,7 +51,7 @@ class Post extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Pubudu Arosha Wanigarathna",
+                          name,
                           style: GoogleFonts.roboto(
                             color: const Color(0xffe4e6eb),
                           ),
@@ -48,13 +61,13 @@ class Post extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              "7 hours ago . ",
+                              "$time . ",
                               style: GoogleFonts.roboto(
                                 color: const Color(0xff7c7e82),
                               ),
                             ),
                             Icon(
-                              Icons.public,
+                              isPublic ? Icons.public : Icons.group,
                               color: const Color(0xff7c7e82),
                               size: size.width * 0.045,
                             )
@@ -87,10 +100,22 @@ class Post extends StatelessWidget {
           SizedBox(
             height: size.height * 0.015,
           ),
-          Image.asset(
-            'assets/images/post.jpeg',
-            fit: BoxFit.cover,
-          ),
+          type == "image"
+              ? Image.asset(
+                  'assets/images/post.jpeg',
+                  fit: BoxFit.cover,
+                )
+              : Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: size.width * 0.020,
+                  ),
+                  child: Text(
+                    "Tough battle out there today, South Africa claimed the victory. We'll bounce back stronger!",
+                    style: GoogleFonts.roboto(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
           SizedBox(
             height: size.height * 0.010,
           ),
