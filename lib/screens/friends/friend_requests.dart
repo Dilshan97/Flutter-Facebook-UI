@@ -8,6 +8,33 @@ import '../widgets/nav_button.dart';
 class FriendRequests extends StatelessWidget {
   const FriendRequests({super.key});
 
+  static const List requests = [
+    {
+      'name' : 'Pavan Perera',
+      'image': 'assets/images/requests/r-1.jpeg'
+    },
+     {
+      'name' : 'Nawanjana Ranaweera',
+      'image': 'assets/images/requests/r-2.jpeg'
+    },
+     {
+      'name' : 'Lahiru Weerasinghe',
+      'image': 'assets/images/requests/r-3.jpeg'
+    },
+     {
+      'name' : 'Shehan Malinga',
+      'image': 'assets/images/requests/r-4.jpeg'
+    },
+     {
+      'name' : 'Sahan Divyanjana',
+      'image': 'assets/images/requests/r-5.jpeg'
+    },
+     {
+      'name' : 'Sasindu Shamika',
+      'image': 'assets/images/requests/r-6.jpeg'
+    }
+  ];
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -96,8 +123,13 @@ class FriendRequests extends StatelessWidget {
                   height: size.height * 0.020,
                 ),
                 Column(
-                  children:
-                      List.generate(100, (index) => const FriendRequestItem()),
+                  children: List.generate(
+                    requests.length,
+                    (index) => FriendRequestItem(
+                      name: requests[index]['name'],
+                      image: requests[index]['image'],
+                    ),
+                  ),
                 )
               ],
             ),
