@@ -1,3 +1,4 @@
+import 'package:facebook_app_ui/screens/home/widgets/post.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
@@ -9,6 +10,47 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        title: Image.asset(
+          'assets/images/logo-1.png',
+          width: size.width * 0.35,
+          color: Colors.white,
+        ),
+        actions: [
+          Container(
+            width: 45,
+            height: 45,
+            padding: const EdgeInsets.all(8),
+            alignment: Alignment.center,
+            decoration: const BoxDecoration(
+              color: Color(0xff2F3031),
+              borderRadius: BorderRadius.all(Radius.circular(50)),
+            ),
+            child: const Icon(
+              Iconsax.search_normal,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            width: size.width * 0.020,
+          ),
+          Container(
+            width: 45,
+            height: 45,
+            padding: const EdgeInsets.all(8),
+            alignment: Alignment.center,
+            decoration: const BoxDecoration(
+              color: Color(0xff2F3031),
+              borderRadius: BorderRadius.all(Radius.circular(50)),
+            ),
+            child: Image.asset(
+              'assets/icons/messenger.png',
+              color: Colors.white,
+            ),
+          )
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -19,54 +61,54 @@ class Home extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/logo-1.png',
-                          width: size.width * 0.40,
-                          color: Colors.white,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              alignment: Alignment.center,
-                              decoration: const BoxDecoration(
-                                color: Color(0xff2F3031),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(50)),
-                              ),
-                              child: const Icon(
-                                Iconsax.search_normal,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(
-                              width: size.width * 0.020,
-                            ),
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              alignment: Alignment.center,
-                              decoration: const BoxDecoration(
-                                color: Color(0xff2F3031),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(50)),
-                              ),
-                              child: const Icon(
-                                Iconsax.message,
-                                color: Colors.white,
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //   crossAxisAlignment: CrossAxisAlignment.center,
+                    //   children: [
+                    //     Image.asset(
+                    //       'assets/images/logo-1.png',
+                    //       width: size.width * 0.40,
+                    //       color: Colors.white,
+                    //     ),
+                    //     Row(
+                    //       mainAxisAlignment: MainAxisAlignment.end,
+                    //       crossAxisAlignment: CrossAxisAlignment.center,
+                    //       children: [
+                    //         Container(
+                    //           padding: const EdgeInsets.all(10),
+                    //           alignment: Alignment.center,
+                    //           decoration: const BoxDecoration(
+                    //             color: Color(0xff2F3031),
+                    //             borderRadius:
+                    //                 BorderRadius.all(Radius.circular(50)),
+                    //           ),
+                    //           child: const Icon(
+                    //             Iconsax.search_normal,
+                    //             color: Colors.white,
+                    //           ),
+                    //         ),
+                    //         SizedBox(
+                    //           width: size.width * 0.020,
+                    //         ),
+                    //         Container(
+                    //           padding: const EdgeInsets.all(10),
+                    //           alignment: Alignment.center,
+                    //           decoration: const BoxDecoration(
+                    //             color: Color(0xff2F3031),
+                    //             borderRadius:
+                    //                 BorderRadius.all(Radius.circular(50)),
+                    //           ),
+                    //           child: const Icon(
+                    //             Iconsax.message,
+                    //             color: Colors.white,
+                    //           ),
+                    //         )
+                    //       ],
+                    //     )
+                    //   ],
+                    // ),
                     SizedBox(
-                      height: size.height * 0.020,
+                      height: size.height * 0.015,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -185,74 +227,7 @@ class Home extends StatelessWidget {
               Column(
                 children: List.generate(
                   20,
-                  (index) => Container(
-                    width: size.width,
-                    height: size.height,
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                ClipRRect(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(50)),
-                                  child: CircleAvatar(
-                                    child:
-                                        Image.asset('assets/images/user1.jpg'),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: size.width * 0.020,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Pubudu Arosha Wanigarathna",
-                                      style: GoogleFonts.roboto(
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                    Text(
-                                      "11 m - Colombo",
-                                      style: GoogleFonts.roboto(
-                                        color: Colors.white,
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ],
-                            ),
-                            const Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Icon(
-                                  Iconsax.more,
-                                  color: Colors.white,
-                                ),
-                                Icon(
-                                  Iconsax.add,
-                                  color: Colors.white,
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: size.height * 0.015,
-                        ),
-                        Image.asset(
-                          'assets/images/post.jpeg',
-                          fit: BoxFit.cover,
-                        )
-                      ],
-                    ),
-                  ),
+                  (index) => const Post(),
                 ),
               )
             ],
