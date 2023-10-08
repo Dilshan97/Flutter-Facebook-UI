@@ -37,7 +37,7 @@ class Story extends StatelessWidget {
         children: [
           Positioned(
             top: 5,
-            left: 5,
+            left: 8,
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(50)),
               child: CircleAvatar(
