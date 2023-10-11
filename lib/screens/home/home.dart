@@ -185,7 +185,7 @@ class Home extends StatelessWidget {
                             ),
                             Text(
                               "What's on your mind ?",
-                              style: GoogleFonts.roboto(
+                              style: GoogleFonts.poppins(
                                 color: Colors.white,
                                 fontSize: size.width * 0.040,
                               ),
@@ -219,14 +219,19 @@ class Home extends StatelessWidget {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: List.generate(
-                      stories.length,
-                      (index) => Story(
-                        image: stories[index]['image'],
-                        name: stories[index]['name'],
-                        avatar: stories[index]['avatar'],
-                      ),
-                    ),
+                    children: [
+                      const NewStory(),
+                      Row(
+                        children: List.generate(
+                          stories.length,
+                          (index) => Story(
+                            image: stories[index]['image'],
+                            name: stories[index]['name'],
+                            avatar: stories[index]['avatar'],
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
