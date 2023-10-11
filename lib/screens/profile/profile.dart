@@ -174,7 +174,7 @@ class _ProfileState extends State<Profile> {
                           ),
                           children: [
                             TextSpan(
-                              text: " (ඩිලා)",
+                              text: " (ඩිලා) ",
                               style: GoogleFonts.inter(
                                 color: Colors.white,
                                 fontSize: 16,
