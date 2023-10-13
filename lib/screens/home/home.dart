@@ -174,7 +174,7 @@ class Home extends StatelessWidget {
                                   const BorderRadius.all(Radius.circular(50)),
                               child: CircleAvatar(
                                 child: Image.asset(
-                                  'assets/images/avatar.jpeg',
+                                  'assets/images/user.jpeg',
                                   fit: BoxFit.cover,
                                   width: size.width,
                                 ),
