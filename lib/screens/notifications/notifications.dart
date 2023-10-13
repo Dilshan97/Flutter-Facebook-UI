@@ -6,6 +6,24 @@ import 'package:iconsax/iconsax.dart';
 class Notifications extends StatelessWidget {
   const Notifications({super.key});
 
+  static const List notifications = [
+    {
+      'title': 'Vihanga Nivarthana mentioned you in a comment.',
+      'image': 'assets/images/vihanga.jpeg',
+      'time': '',
+    },
+    {
+      'title': 'Dhanika Perera replied to your comment on his photo.',
+      'image': 'assets/images/dhanika.jpeg',
+      'time': '',
+    }, 
+    {
+      'title': 'Pubudu Arosha Wanigasekara mentioned you in a comment in Software Engineers Sri Lanka - ශ්රී ලංකා මෘදුකාංග ඉන්ජිනේරු එකමුතුව',
+      'image': 'assets/images/user1.jpg',
+      'time': '',
+    }
+  ];
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -76,7 +94,13 @@ class Notifications extends StatelessWidget {
                   ),
                 ),
                 Column(
-                  children: List.generate(10, (index) => const NotificationItem()),
+                  children: List.generate(
+                    notifications.length,
+                    (index) => NotificationItem(
+                      title: notifications[index]['title'],
+                      image: notifications[index]['image'],
+                    ),
+                  ),
                 )
               ],
             ),

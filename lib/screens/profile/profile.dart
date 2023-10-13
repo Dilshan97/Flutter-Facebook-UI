@@ -128,9 +128,9 @@ class _ProfileState extends State<Profile> {
                     child: ClipOval(
                       child: Image.asset(
                         "assets/images/avatar.jpeg",
-                        width: 450,
-                        height: 450,
-                        fit: BoxFit.fitWidth,
+                        width: size.width,
+                        height: size.height * 0.60,
+                        fit: BoxFit.fitHeight,
                       ),
                     ),
                   ),
@@ -174,10 +174,10 @@ class _ProfileState extends State<Profile> {
                           ),
                           children: [
                             TextSpan(
-                              text: " (ඩිලා)",
+                              text: " (ඩිලා) ",
                               style: GoogleFonts.inter(
                                 color: Colors.white,
-                                fontSize: 16,
+                                fontSize: size.width * 0.040,
                               ),
                             ),
                             WidgetSpan(
@@ -198,7 +198,7 @@ class _ProfileState extends State<Profile> {
                         "Software Engineer | Innovator | Tech Enthusiast \n</> 🇱🇰🇦🇪🇳🇿🖥",
                         style: GoogleFonts.inter(
                           color: Colors.white,
-                          fontSize: 14,
+                          fontSize: size.width * 0.035,
                           fontWeight: FontWeight.w300,
                         ),
                       ),
@@ -207,57 +207,70 @@ class _ProfileState extends State<Profile> {
                       ),
                       Row(
                         children: [
-                          Container(
-                            width: 145,
+                          SizedBox(
+                            width: size.width / 2.5,
                             height: 45,
-                            decoration: BoxDecoration(
-                              color: const Color(0xff2C64F6),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Icon(
-                                  Icons.add,
-                                  color: Colors.white,
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: const Color(0xff2C64F6),
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
                                 ),
-                                Text(
-                                  "Add to story",
-                                  style: GoogleFonts.inter(
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Icon(
+                                    Icons.add,
                                     color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600,
                                   ),
-                                )
-                              ],
+                                  Text(
+                                    "Add to story",
+                                    style: GoogleFonts.inter(
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                           const SizedBox(
                             width: 10,
                           ),
-                          Container(
-                            width: 145,
+                          SizedBox(
+                            width: 153,
                             height: 45,
-                            decoration: BoxDecoration(
-                              color: const Color(0xff3A3B3C),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Icon(
-                                  Icons.edit,
-                                  color: Colors.white,
-                                ),
-                                Text(
-                                  "Edit profile",
-                                  style: GoogleFonts.inter(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600,
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: const Color(0xff3A3B3C),
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
                                   ),
-                                )
-                              ],
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Icon(
+                                    Icons.edit,
+                                    color: Colors.white,
+                                  ),
+                                  Text(
+                                    "Edit profile",
+                                    style: GoogleFonts.inter(
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                           const SizedBox(
@@ -267,7 +280,7 @@ class _ProfileState extends State<Profile> {
                             width: 50,
                             height: 45,
                             decoration: BoxDecoration(
-                              color: Color(0xff3A3B3C),
+                              color: const Color(0xff3A3B3C),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: const Icon(
@@ -290,20 +303,24 @@ class _ProfileState extends State<Profile> {
                           const SizedBox(
                             height: 20,
                           ),
-                          Container(
+                          SizedBox(
                             width: size.width * 0.95,
-                            height: 45,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: const Color(0xff27384E),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Text(
-                              "Edit public details",
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.inter(
-                                color: Color(0xff7EACEE),
-                                fontSize: 16,
+                            height: size.height * 0.053,
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xff27384E),
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                  )),
+                              child: Text(
+                                "Edit public details",
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.inter(
+                                  color: const Color(0xff7EACEE),
+                                  fontSize: 16,
+                                ),
                               ),
                             ),
                           ),

@@ -77,23 +77,21 @@ class Home extends StatelessWidget {
       'time': '15 hours ago',
       'isPublic': true,
       'type': 'mixd',
-      'post':
-          'Team 🫶🏻',
+      'post': 'Team 🫶🏻',
       'postImage': 'assets/images/posts/post-5.jpeg',
     },
-     {
+    {
       'name': 'Aluth',
       'image': 'assets/images/posts/avatar-6.png',
       'time': '21 hours ago',
       'isPublic': true,
       'type': 'mixd',
-      'post':
-          '🙄 #teachersday',
+      'post': '🙄 #teachersday',
       'postImage': 'assets/images/posts/post-6.jpeg',
     },
     {
       'name': 'Newsfirst.lk',
-       'image': 'assets/images/posts/avatar-7.jpeg',
+      'image': 'assets/images/posts/avatar-7.jpeg',
       'time': '3 hours ago',
       'isPublic': true,
       'type': 'mixd',
@@ -187,14 +185,18 @@ class Home extends StatelessWidget {
                             ),
                             Text(
                               "What's on your mind ?",
-                              style: GoogleFonts.roboto(
+                              style: GoogleFonts.poppins(
                                 color: Colors.white,
                                 fontSize: size.width * 0.040,
                               ),
                             ),
                           ],
                         ),
-                        Image.asset('assets/icons/saved.png')
+                        Image.asset(
+                          'assets/icons/photo.png',
+                          fit: BoxFit.contain,
+                          width: size.width * 0.060,
+                        )
                       ],
                     ),
                   ],
@@ -217,14 +219,19 @@ class Home extends StatelessWidget {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: List.generate(
-                      stories.length,
-                      (index) => Story(
-                        image: stories[index]['image'],
-                        name: stories[index]['name'],
-                        avatar: stories[index]['avatar'],
-                      ),
-                    ),
+                    children: [
+                      const NewStory(),
+                      Row(
+                        children: List.generate(
+                          stories.length,
+                          (index) => Story(
+                            image: stories[index]['image'],
+                            name: stories[index]['name'],
+                            avatar: stories[index]['avatar'],
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -249,7 +256,7 @@ class Home extends StatelessWidget {
                     type: posts[index]['type'],
                     post: posts[index]['post'],
                     postImage: posts[index]['postImage'],
-                    verify: posts[index]['verify']?? false,
+                    verify: posts[index]['verify'] ?? false,
                   ),
                 ),
               )

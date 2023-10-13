@@ -20,6 +20,7 @@ class BioItem extends StatefulWidget {
 class _BioItemState extends State<BioItem> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.only(
         bottom: 15,
@@ -38,13 +39,13 @@ class _BioItemState extends State<BioItem> {
           Expanded(
             child: RichText(
               softWrap: false,
-              maxLines: 1,
+              maxLines: 2,
               overflow: TextOverflow.ellipsis,
               text: TextSpan(
                 text: "${widget.title1} ",
                 style: GoogleFonts.inter(
                   color: const Color(0xffDBDCE0),
-                  fontSize: 15,
+                  fontSize: size.width * 0.038,
                 ),
                 children: [
                   TextSpan(
@@ -52,7 +53,7 @@ class _BioItemState extends State<BioItem> {
                     style: GoogleFonts.inter(
                       color: const Color(0xffE4E6EA),
                       fontWeight: FontWeight.w600,
-                      fontSize: 15,
+                      fontSize: size.width * 0.038,
                     ),
                   ),
                 ],

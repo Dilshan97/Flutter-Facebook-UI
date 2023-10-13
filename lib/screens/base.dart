@@ -21,7 +21,7 @@ class _BaseState extends State<Base> {
   List<Widget> children = [
     const Home(),
     const FriendRequests(),
-    const Video(),
+    // const Video(),
     const Marketplace(),
     const Notifications(),
     const Menu()
@@ -56,7 +56,7 @@ class BottomNavbar extends StatelessWidget {
   static final List<String> navLabels = [
     'Home',
     'Friends',
-    'Video',
+    // 'Video',
     'Marketplace',
     'Notifications',
     'Menu'
@@ -65,7 +65,7 @@ class BottomNavbar extends StatelessWidget {
   static final List<IconData> navIcons = [
     Iconsax.home,
     Iconsax.profile_2user,
-    Iconsax.video_play,
+    // Iconsax.video_play,
     Iconsax.shop,
     Iconsax.notification,
     Iconsax.menu_1,

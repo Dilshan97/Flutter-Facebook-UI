@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class UserCard extends StatefulWidget {
-  final bool last;
   final String name;
   final String image;
 
   const UserCard({
     super.key,
-    required this.last,
     required this.name,
     required this.image,
   });
@@ -20,13 +18,11 @@ class UserCard extends StatefulWidget {
 class _UserCardState extends State<UserCard> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
-      width: 113,
-      height: 173,
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         top: 5,
         bottom: 5,
-        right: widget.last == true ? 0 : 10,
       ),
       decoration: BoxDecoration(
         color: const Color(0xff323435),
@@ -40,9 +36,11 @@ class _UserCardState extends State<UserCard> {
               topRight: Radius.circular(12),
             ),
             child: SizedBox.fromSize(
-              child: Image.network(
+              child: Image.asset(
                 widget.image,
                 fit: BoxFit.cover,
+                width: size.width,
+                height: size.height * 0.15,
               ),
             ),
           ),

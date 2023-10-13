@@ -3,7 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
 class NotificationItem extends StatelessWidget {
-  const NotificationItem({super.key});
+  final String title;
+  final String image;
+
+  const NotificationItem({
+    super.key,
+    required this.title,
+    required this.image,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +31,7 @@ class NotificationItem extends StatelessWidget {
                   ClipRRect(
                     borderRadius: const BorderRadius.all(Radius.circular(50)),
                     child: Image.asset(
-                      'assets/images/user1.jpg',
+                      image,
                       fit: BoxFit.cover,
                       width: size.width * 0.15,
                     ),
@@ -42,13 +49,18 @@ class NotificationItem extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Vihanga Nivarthana reacted to your \ncomment: Vihanga මේස රෙද්ද දාලා \n ගහමුද 😂",
-                    style: GoogleFonts.roboto(
-                      color: Colors.white,
-                    ),
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: GoogleFonts.roboto(
+                          color: Colors.white,
+                        ),
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
                   ),
                   Text(
                     "1 h",

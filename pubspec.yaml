@@ -68,6 +68,8 @@ flutter:
     - assets/images/stories/
     - assets/images/posts/
     - assets/images/requests/
+    - assets/images/friends/
+    - assets/images/highlights/
     - assets/icons/
     - assets/icons/post/
   #   - images/a_dot_ham.jpeg
