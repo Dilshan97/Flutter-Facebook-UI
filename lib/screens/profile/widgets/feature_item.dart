@@ -27,24 +27,29 @@ class _FeatureItemState extends State<FeatureItem> {
           Container(
             width: 110,
             height: 180,
-            decoration: BoxDecoration(
-              color: const Color(0xff323435),
-              borderRadius: BorderRadius.circular(16),
-            ),
+            decoration: widget.add
+                ? BoxDecoration(
+                    color: const Color(0xff323435),
+                    borderRadius: BorderRadius.circular(16),
+                  )
+                : BoxDecoration(
+                    color: const Color(0xff323435),
+                    borderRadius: BorderRadius.circular(16),
+                    image: DecorationImage(
+                      image: AssetImage(widget.image.toString()),
+                      fit: BoxFit.cover,
+                      colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.7),
+                        BlendMode.dstATop,
+                      ),
+                    ),
+                  ),
             child: widget.add
                 ? const Icon(
                     Icons.add,
                     color: Colors.white,
                   )
-                : ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: SizedBox.fromSize(
-                      child: Image.asset(
-                        widget.image.toString(),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
+                : Container(),
           ),
           const SizedBox(
             height: 5,

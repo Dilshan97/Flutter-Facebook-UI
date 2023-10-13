@@ -99,7 +99,7 @@ class _FriendsState extends State<Friends> {
           height: 12,
         ),
         SizedBox(
-          width: size.width * 0.90,
+          width: size.width,
           height: size.height * 0.055,
           child: ElevatedButton(
             onPressed: () {},
