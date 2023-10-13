@@ -37,7 +37,7 @@ class _ProfileState extends State<Profile> {
             Text(
               "Dilshan Ramesh",
               style: GoogleFonts.inter(
-                fontSize: 15,
+                fontSize: size.width * 0.035,
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
               ),
@@ -56,7 +56,7 @@ class _ProfileState extends State<Profile> {
                 "9+",
                 style: GoogleFonts.inter(
                   color: Colors.white,
-                  fontSize: 14,
+                  fontSize: size.width * 0.033,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -127,7 +127,7 @@ class _ProfileState extends State<Profile> {
                     backgroundColor: const Color(0xff242525),
                     child: ClipOval(
                       child: Image.asset(
-                        "assets/images/avatar.jpeg",
+                        "assets/images/user.jpeg",
                         width: size.width,
                         height: size.height * 0.60,
                         fit: BoxFit.fitHeight,
@@ -195,15 +195,15 @@ class _ProfileState extends State<Profile> {
                         height: 3,
                       ),
                       Text(
-                        "Software Engineer | Innovator | Tech Enthusiast \n</> 🇱🇰🇦🇪🇳🇿🖥",
-                        style: GoogleFonts.inter(
+                        "Software Engineer | Innovator | Tech Enthusiast </> 🇱🇰🇦🇪🇳🇿🖥",
+                        style: GoogleFonts.roboto(
                           color: Colors.white,
-                          fontSize: size.width * 0.035,
+                          fontSize: size.width * 0.038,
                           fontWeight: FontWeight.w300,
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: size.width * 0.025,
                       ),
                       Row(
                         children: [
@@ -238,8 +238,8 @@ class _ProfileState extends State<Profile> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            width: 10,
+                          SizedBox(
+                            width: size.width * 0.025,
                           ),
                           SizedBox(
                             width: 153,
@@ -273,8 +273,8 @@ class _ProfileState extends State<Profile> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            width: 10,
+                          SizedBox(
+                            width: size.width * 0.025,
                           ),
                           Container(
                             width: 50,
@@ -332,9 +332,6 @@ class _ProfileState extends State<Profile> {
                             height: 20,
                           ),
                           const PublishPost(),
-                          const SizedBox(
-                            height: 520,
-                          ),
                         ],
                       )
                     ],

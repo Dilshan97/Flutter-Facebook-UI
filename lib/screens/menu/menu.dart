@@ -97,9 +97,9 @@ class Menu extends StatelessWidget {
                                     Radius.circular(50),
                                   ),
                                   child: Image.asset(
-                                    'assets/images/avatar.jpeg',
+                                    'assets/images/user.jpeg',
                                     width: 60,
-                                    fit: BoxFit.cover,
+                                    fit: BoxFit.fitHeight,
                                   ),
                                 ),
                               ),

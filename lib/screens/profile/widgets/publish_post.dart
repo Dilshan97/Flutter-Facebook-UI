@@ -13,8 +13,8 @@ class PublishPost extends StatefulWidget {
 class _PublishPostState extends State<PublishPost> {
   List posts = [
     {
-      'name': 'Wild Cookbook',
-      'image': 'assets/images/posts/avatar-1.jpeg',
+      'name': 'Dilshan Ramesh',
+      'image': 'assets/images/user.jpeg',
       'time': '2 days ago',
       'isPublic': true,
       'type': 'mixd',
@@ -22,8 +22,8 @@ class _PublishPostState extends State<PublishPost> {
       'postImage': 'assets/images/posts/post-1.jpg'
     },
     {
-      'name': 'Barista Sri Lanka',
-      'image': 'assets/images/posts/avatar-2.jpg',
+      'name': 'Dilshan Ramesh',
+      'image': 'assets/images/user.jpeg',
       'time': 'a day ago',
       'isPublic': true,
       'type': 'mixd',
@@ -32,8 +32,8 @@ class _PublishPostState extends State<PublishPost> {
       'postImage': 'assets/images/posts/post-2.jpeg'
     },
     {
-      'name': 'MACHANG',
-      'image': 'assets/images/posts/avatar-3.png',
+      'name': 'Dilshan Ramesh',
+      'image': 'assets/images/user.jpeg',
       'time': '9 hours ago',
       'isPublic': true,
       'type': 'mixd',
@@ -42,8 +42,8 @@ class _PublishPostState extends State<PublishPost> {
       'postImage': 'assets/images/posts/post-3.jpeg'
     },
     {
-      'name': 'ICC - International Cricket Council',
-      'image': 'assets/images/posts/avatar-4.jpeg',
+      'name': 'Dilshan Ramesh',
+      'image': 'assets/images/user.jpeg',
       'time': '2 days ago',
       'isPublic': true,
       'type': 'mixd',
@@ -53,8 +53,8 @@ class _PublishPostState extends State<PublishPost> {
       'verify': true,
     },
     {
-      'name': 'Malith Ishan',
-      'image': 'assets/images/posts/avatar-5.jpeg',
+      'name': 'Dilshan Ramesh',
+      'image': 'assets/images/user.jpeg',
       'time': '15 hours ago',
       'isPublic': true,
       'type': 'mixd',
@@ -62,8 +62,8 @@ class _PublishPostState extends State<PublishPost> {
       'postImage': 'assets/images/posts/post-5.jpeg',
     },
     {
-      'name': 'Aluth',
-      'image': 'assets/images/posts/avatar-6.png',
+      'name': 'Dilshan Ramesh',
+      'image': 'assets/images/user.jpeg',
       'time': '21 hours ago',
       'isPublic': true,
       'type': 'mixd',
@@ -71,8 +71,8 @@ class _PublishPostState extends State<PublishPost> {
       'postImage': 'assets/images/posts/post-6.jpeg',
     },
     {
-      'name': 'Newsfirst.lk',
-      'image': 'assets/images/posts/avatar-7.jpeg',
+      'name': 'Dilshan Ramesh',
+      'image': 'assets/images/user.jpeg',
       'time': '3 hours ago',
       'isPublic': true,
       'type': 'mixd',
@@ -130,10 +130,10 @@ class _PublishPostState extends State<PublishPost> {
               backgroundColor: const Color(0xff242525),
               child: ClipOval(
                 child: Image.asset(
-                  "assets/images/avatar.jpeg",
+                  "assets/images/user.jpeg",
                   width: 450,
                   height: 450,
-                  fit: BoxFit.fitWidth,
+                  fit: BoxFit.fitHeight,
                 ),
               ),
             ),
