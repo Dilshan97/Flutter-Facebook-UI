@@ -6,8 +6,12 @@ class FeatureItem extends StatefulWidget {
   final String? image;
   final bool add;
 
-  const FeatureItem(
-      {super.key, required this.title, this.image, required this.add});
+  const FeatureItem({
+    super.key,
+    required this.title,
+    this.image,
+    required this.add,
+  });
 
   @override
   State<FeatureItem> createState() => _FeatureItemState();
@@ -24,7 +28,7 @@ class _FeatureItemState extends State<FeatureItem> {
             width: 110,
             height: 180,
             decoration: BoxDecoration(
-              color: Color(0xff323435),
+              color: const Color(0xff323435),
               borderRadius: BorderRadius.circular(16),
             ),
             child: widget.add
@@ -35,7 +39,7 @@ class _FeatureItemState extends State<FeatureItem> {
                 : ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: SizedBox.fromSize(
-                      child: Image.network(
+                      child: Image.asset(
                         widget.image.toString(),
                         fit: BoxFit.cover,
                       ),

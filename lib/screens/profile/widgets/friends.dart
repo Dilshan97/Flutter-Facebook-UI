@@ -55,14 +55,14 @@ class _FriendsState extends State<Friends> {
                 Text(
                   "Friends",
                   style: GoogleFonts.inter(
-                    color: Color(0xffE4E6EA),
+                    color: const Color(0xffE4E6EA),
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 Text(
                   "3,808 friends",
                   style: GoogleFonts.inter(
-                    color: Color(0xffB0B3B7),
+                    color: const Color(0xffB0B3B7),
                   ),
                 ),
               ],
@@ -80,7 +80,7 @@ class _FriendsState extends State<Friends> {
           height: 20,
         ),
         SizedBox(
-          height: size.height*0.46,
+          height: size.height * 0.46,
           child: GridView.count(
             crossAxisCount: 3,
             crossAxisSpacing: 10.0,
@@ -94,28 +94,32 @@ class _FriendsState extends State<Friends> {
               ),
             ),
           ),
-        ),       
+        ),
         const SizedBox(
           height: 12,
         ),
-        Container(
+        SizedBox(
           width: size.width * 0.90,
-          height: 45,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: const Color(0xff3A3B3C),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Text(
-            'See all friends',
-            textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
-              color: const Color(0xffE4E6EA),
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
+          height: size.height * 0.055,
+          child: ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xff3A3B3C),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(12))
+              )
+            ),
+            child: Text(
+              'See all friends',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.inter(
+                color: const Color(0xffE4E6EA),
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
-        )
+        ),
       ],
     );
   }
